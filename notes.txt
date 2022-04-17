@@ -1,0 +1,23 @@
+
+
+---required data---
+weather:
+	date
+	location
+timer:
+	length
+translation:
+	input
+	language to translate
+calendar (google calendar)
+	date
+	time
+	title
+	describtion
+	reminder (optional)
+read aloud:
+	file
+	page
+dicate text:
+	input
+	storing location
