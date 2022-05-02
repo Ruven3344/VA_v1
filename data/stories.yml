@@ -42,5 +42,9 @@ stories:
       entities:
       - date: "next Monday"
     - action: utter_tell_weather
-
-
+- story: timer1
+  steps:
+    - intent: set_timer
+      entities:
+        - timelength: "30 minutes"
+    - action: utter_set_timer

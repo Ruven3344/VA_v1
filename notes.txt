@@ -3,7 +3,7 @@
 ---required data---
 safed in slots
 weather: 
-	date
+	date +
 	location +
 timer:
 	timelength

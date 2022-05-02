@@ -7,13 +7,18 @@ nlu:
     - How is the weather?
     - How is the weather [tomorrow](date)?
     - Tell me the weather today in [Baden](location)
-    - Is the weather [today](date) good
+    - Tell me the weather today in [Gansingen](location)
+    - Is the weather [today](date) good ?
+    - Is the weather bad [today](date)
     - Is the weather [next monday](date) good in [Gansingen](location)
+    - How is the weather [today](date) in [Wettingen](location)
+    - How is the weather [tomorrow](date) in [Baden](location)
+
 - intent: inform_location
   examples: |
     - In [Gansingen](location)
     - In [Baden](location)
-- intent: inform_date
+- intent: inform_date 
   examples: |
     - today
     - tomorrow 
@@ -23,5 +28,11 @@ nlu:
     - next monday
     - next tuesday
     - next saturday
+
+- intent: set_timer
+  examples: |
+    - Set a timer for [20 minutes](timelength)
+    - Set a timer for [45 minutes](timelength)
+    - Wake me up in [half an hour](timelength)
 
 

@@ -3,9 +3,8 @@ version: "3.1"
 intents:
   - ask_weather
   - inform_date
-  - inform_time
+  - set_timer
   - inform_location
-  - inform_timelength
   - inform_transinput
   - inform_language
   - inform_title
@@ -16,6 +15,7 @@ intents:
 entities:
   - location
   - date
+  - timelength
 
 
 responses:
@@ -27,6 +27,8 @@ responses:
   - text: " On which date?"
   utter_tell_weather:
   - text: "The weather on {date} in {location} is good."
+  utter_set_timer:
+  - text: "Set timer for {timelength}."
 
 
 slots:
@@ -42,8 +44,11 @@ slots:
     mappings:
     - type: from_entity
       entity: date
-
-#  timelength
+  timelength:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: timelength
 #  transinput
 #  language
 #  title 

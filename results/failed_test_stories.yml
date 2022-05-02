@@ -2,50 +2,50 @@ version: "3.1"
 stories:
 - story: happy path 1 (.\tests\test_stories.yml)
   steps:
-  - intent: greet
-  - action: utter_greet  # predicted: action_default_fallback
-  - intent: mood_great  # predicted: greet: amazing
-  - action: utter_happy  # predicted: utter_tell_weather
+  - intent: greet  # predicted: ask_weather: hello there!
+  - action: utter_greet  # predicted: action_listen
+  - intent: mood_great  # predicted: inform_location: amazing
+  - action: utter_happy  # predicted: action_listen
 - story: happy path 2 (.\tests\test_stories.yml)
   steps:
-  - intent: greet
-  - action: utter_greet  # predicted: action_default_fallback
-  - intent: mood_great  # predicted: greet: amazing
-  - action: utter_happy  # predicted: utter_tell_weather
-  - intent: goodbye  # predicted: greet: bye-bye!
-  - action: utter_goodbye  # predicted: utter_tell_weather
+  - intent: greet  # predicted: ask_weather: hello there!
+  - action: utter_greet  # predicted: action_listen
+  - intent: mood_great  # predicted: inform_location: amazing
+  - action: utter_happy  # predicted: action_listen
+  - intent: goodbye  # predicted: inform_date: bye-bye!
+  - action: utter_goodbye  # predicted: action_listen
 - story: sad path 1 (.\tests\test_stories.yml)
   steps:
-  - intent: greet
-  - action: utter_greet  # predicted: action_default_fallback
-  - intent: mood_unhappy  # predicted: greet: not good
-  - action: utter_cheer_up  # predicted: utter_tell_weather
+  - intent: greet  # predicted: ask_weather: hello
+  - action: utter_greet  # predicted: action_listen
+  - intent: mood_unhappy  # predicted: inform_date: not good
+  - action: utter_cheer_up  # predicted: action_listen
   - action: utter_did_that_help  # predicted: action_listen
-  - intent: affirm  # predicted: greet: yes
-  - action: utter_happy  # predicted: utter_tell_weather
+  - intent: affirm  # predicted: inform_date: yes
+  - action: utter_happy  # predicted: action_listen
 - story: sad path 2 (.\tests\test_stories.yml)
   steps:
-  - intent: greet
-  - action: utter_greet  # predicted: action_default_fallback
-  - intent: mood_unhappy  # predicted: greet: not good
-  - action: utter_cheer_up  # predicted: utter_tell_weather
+  - intent: greet  # predicted: ask_weather: hello
+  - action: utter_greet  # predicted: action_listen
+  - intent: mood_unhappy  # predicted: inform_date: not good
+  - action: utter_cheer_up  # predicted: action_listen
   - action: utter_did_that_help  # predicted: action_listen
-  - intent: deny  # predicted: greet: not really
-  - action: utter_goodbye  # predicted: utter_tell_weather
+  - intent: deny  # predicted: inform_date: not really
+  - action: utter_goodbye  # predicted: action_listen
 - story: sad path 3 (.\tests\test_stories.yml)
   steps:
-  - intent: greet
-  - action: utter_greet  # predicted: action_default_fallback
-  - intent: mood_unhappy  # predicted: greet: very terrible
-  - action: utter_cheer_up  # predicted: utter_tell_weather
+  - intent: greet  # predicted: inform_date: hi
+  - action: utter_greet  # predicted: action_listen
+  - intent: mood_unhappy  # predicted: inform_date: very terrible
+  - action: utter_cheer_up  # predicted: action_listen
   - action: utter_did_that_help  # predicted: action_listen
-  - intent: deny  # predicted: greet: no
-  - action: utter_goodbye  # predicted: utter_tell_weather
+  - intent: deny  # predicted: inform_date: no
+  - action: utter_goodbye  # predicted: action_listen
 - story: say goodbye (.\tests\test_stories.yml)
   steps:
-  - intent: goodbye  # predicted: greet: bye-bye!
-  - action: utter_goodbye  # predicted: utter_tell_weather
+  - intent: goodbye  # predicted: inform_date: bye-bye!
+  - action: utter_goodbye  # predicted: action_listen
 - story: bot challenge (.\tests\test_stories.yml)
   steps:
-  - intent: bot_challenge  # predicted: greet: are you a bot?
-  - action: utter_iamabot  # predicted: utter_tell_weather
+  - intent: bot_challenge  # predicted: inform_date: are you a bot?
+  - action: utter_iamabot  # predicted: action_listen
