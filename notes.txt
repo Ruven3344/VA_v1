@@ -1,11 +1,12 @@
 
 
 ---required data---
-weather:
+safed in slots
+weather: 
 	date
-	location
+	location +
 timer:
-	length
+	timelength
 translation:
 	input
 	language to translate
@@ -20,4 +21,4 @@ read aloud:
 	page
 dicate text:
 	input
-	storing location
+	

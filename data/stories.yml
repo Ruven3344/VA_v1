@@ -2,29 +2,45 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: weather1
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+    - intent: ask_weather
+      entities:
+      - location: "Baden"
+      - date: "tomorrow"
+    - action: utter_tell_weather
 
-- story: sad path 1
+- story: weather2
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+    - intent: ask_weather
+    - action: utter_ask_location
+    - intent: inform_location
+      entities:
+      - location: "Baden"
+    - action: utter_ask_date
+    - intent: inform_date
+      entities:
+      - date: "tomorrow"
+    - action: utter_tell_weather
+- story: weather3
+  steps:
+    - intent: ask_weather
+      entities:
+        - date: tomorrow
+    - action: utter_ask_location
+    - intent: inform_location
+      entities:
+      - location: "Baden"
+    - action: utter_tell_weather
+- story: weather4
+  steps:
+    - intent: ask_weather
+      entities:
+        - location: Gansingen
+    - action: utter_ask_date
+    - intent: inform_date
+      entities:
+      - date: "next Monday"
+    - action: utter_tell_weather
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+
