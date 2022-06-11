@@ -55,3 +55,10 @@ stories:
         - transinput: How are you
         - language: french
     - action: utter_translate
+
+- story: dictation
+  steps:
+    - intent: ask_dictation
+      entities:
+      - dictation: Buy bred beer eggs salad
+    - action: utter_dictation

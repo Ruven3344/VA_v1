@@ -45,3 +45,11 @@ nlu:
     - Translate [human](transinput) into [italian](language)
     - Translate [I want to play basketball](transinput) into [german](language)
     - Translate [My name is Frank](transinput) into [spanish](language)
+
+- intent: ask_dictation
+  examples: |
+    - Start dictation (I need to go buy beer and breed)[dictation]
+    - Save for me (I want to play football later, thats why i need to do my homework)[dictation]
+    - Start dictation (Do homework, wash clothes, pay bills, try out new basketball)[dictation]
+    - Start dictation (I need to go buy beer and breed)[dictation]
+    - Write down (safe description for settings)[dictation]

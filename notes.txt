@@ -8,8 +8,8 @@ weather:
 timer:
 	timelength +
 translation:
-	input
-	language to translate
+	input +
+	language to translate + 
 calendar (google calendar)
 	date
 	time
@@ -20,7 +20,7 @@ read aloud:
 	file
 	page
 dictate text:
-	input
+	input +
 
 Executable scripts:
 
