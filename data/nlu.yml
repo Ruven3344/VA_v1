@@ -36,3 +36,12 @@ nlu:
     - Wake me up in [half an hour](timelength)
 
 
+- intent: ask_transinput_language
+  examples: |
+    - Translate [I want to play football](transinput) into [french](language)
+    - Translate [How are you today](transinput) into [italian](language)
+    - What does [boardgame](transinput) mean in [spanish](language)
+    - Translate [you are dumb](transinput) into [french](language)
+    - Translate [human](transinput) into [italian](language)
+    - Translate [I want to play basketball](transinput) into [german](language)
+    - Translate [My name is Frank](transinput) into [spanish](language)

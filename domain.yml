@@ -5,8 +5,7 @@ intents:
   - inform_date
   - set_timer
   - inform_location
-  - inform_transinput
-  - inform_language
+  - ask_transinput_language
   - inform_title
   - inform_description
   - inform_reminder
@@ -16,6 +15,8 @@ entities:
   - location
   - date
   - timelength
+  - transinput
+  - language
 
 
 responses:
@@ -29,6 +30,9 @@ responses:
   - text: "The weather on {date} in {location} is good."
   utter_set_timer:
   - text: "Set timer for {timelength}."
+  utter_translate:
+  - text: "Translation"
+
 
 
 slots:
@@ -50,7 +54,17 @@ slots:
     - type: from_entity
       entity: timelength
 #  transinput
+  transinput:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: transinput
 #  language
+  language:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: language
 #  title 
 #  description
 #  reminder

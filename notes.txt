@@ -6,7 +6,7 @@ weather:
 	date +
 	location +
 timer:
-	timelength
+	timelength +
 translation:
 	input
 	language to translate
@@ -19,6 +19,14 @@ calendar (google calendar)
 read aloud:
 	file
 	page
-dicate text:
+dictate text:
 	input
-	
+
+Executable scripts:
+
+weather
+timer
+translate
+calendar
+read loud
+dictate

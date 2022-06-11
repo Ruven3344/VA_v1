@@ -1,0 +1,58 @@
+[
+  {
+    "text": "Translate I want to play football into french",
+    "intent": "ask_transinput_language",
+    "intent_prediction": {
+      "name": "set_timer",
+      "confidence": 0.86782306432724
+    }
+  },
+  {
+    "text": "Translate How are you today into italian",
+    "intent": "ask_transinput_language",
+    "intent_prediction": {
+      "name": "inform_date",
+      "confidence": 0.6303207874298096
+    }
+  },
+  {
+    "text": "What does boardgame mean in spanish",
+    "intent": "ask_transinput_language",
+    "intent_prediction": {
+      "name": "set_timer",
+      "confidence": 0.9744713306427002
+    }
+  },
+  {
+    "text": "Translate you are dumb into french",
+    "intent": "ask_transinput_language",
+    "intent_prediction": {
+      "name": "set_timer",
+      "confidence": 0.9375100135803223
+    }
+  },
+  {
+    "text": "Translate human into italian",
+    "intent": "ask_transinput_language",
+    "intent_prediction": {
+      "name": "set_timer",
+      "confidence": 0.9570922255516052
+    }
+  },
+  {
+    "text": "Translate I want to play basketball into german",
+    "intent": "ask_transinput_language",
+    "intent_prediction": {
+      "name": "set_timer",
+      "confidence": 0.8832419514656067
+    }
+  },
+  {
+    "text": "Translate My name is Frank into spanish",
+    "intent": "ask_transinput_language",
+    "intent_prediction": {
+      "name": "set_timer",
+      "confidence": 0.947289228439331
+    }
+  }
+]

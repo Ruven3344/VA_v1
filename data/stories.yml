@@ -48,3 +48,10 @@ stories:
       entities:
         - timelength: "30 minutes"
     - action: utter_set_timer
+- story: translation
+  steps:
+    - intent: ask_transinput_language
+      entities:
+        - transinput: How are you
+        - language: french
+    - action: utter_translate
