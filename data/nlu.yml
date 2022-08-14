@@ -1,7 +1,5 @@
 version: "3.1"
-
 nlu:
-
 - intent: ask_weather
   examples: |
     - How is the weather?
@@ -13,29 +11,26 @@ nlu:
     - Is the weather [next monday](date) good in [Gansingen](location)
     - How is the weather [today](date) in [Wettingen](location)
     - How is the weather [tomorrow](date) in [Baden](location)
-
 - intent: inform_location
   examples: |
     - In [Gansingen](location)
     - In [Baden](location)
-- intent: inform_date 
+- intent: inform_date
   examples: |
     - today
-    - tomorrow 
-    - on 21. april
-    - on 22. november
-    - on 15. january
+    - tomorrow
+    - on 21th april
+    - on 22th november
+    - on 15th january
     - next monday
     - next tuesday
     - next saturday
-
 - intent: set_timer
   examples: |
     - Set a timer for [20 minutes](timelength)
     - Set a timer for [45 minutes](timelength)
     - Wake me up in [half an hour](timelength)
-
-
+    - set a timer for [20 minutes](timelength)
 - intent: ask_transinput_language
   examples: |
     - Translate [I want to play football](transinput) into [french](language)
@@ -45,11 +40,16 @@ nlu:
     - Translate [human](transinput) into [italian](language)
     - Translate [I want to play basketball](transinput) into [german](language)
     - Translate [My name is Frank](transinput) into [spanish](language)
-
 - intent: ask_dictation
   examples: |
     - Start dictation (I need to go buy beer and breed)[dictation]
     - Save for me (I want to play football later, thats why i need to do my homework)[dictation]
     - Start dictation (Do homework, wash clothes, pay bills, try out new basketball)[dictation]
-    - Start dictation (I need to go buy beer and breed)[dictation]
     - Write down (safe description for settings)[dictation]
+- intent: ask_addappointment
+  examples: |
+    - Add an appointment [tomorrow](date) at [12 o'clock](time) with the title [meeting with Ben](title)
+    - Add an appointment at the (21th of august) #add default name appointment
+    - Create appointment [next monday](date) at [2 o'clock pm](time) with the title [buy pencils)](title)
+    - Create appointment with the title [buy pencils](title) [21th of april](date) at [27 o'clock pm](time)
+    - add an appointment at the [21th of april](date) at [3 o'clock pm](time) with the title [meeting](title)

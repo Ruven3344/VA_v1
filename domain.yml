@@ -1,46 +1,45 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - ask_weather
-  - inform_date
-  - set_timer
-  - inform_location
-  - ask_transinput_language
-  - inform_title
-  - inform_description
-  - inform_reminder
-  - inform_texttostore
-  - ask_dictation
-
+- ask_addappointment
+- ask_dictation
+- ask_transinput_language
+- ask_weather
+- inform_date
+- inform_description
+- inform_location
+- inform_reminder
+- inform_texttostore
+- inform_title
+- set_timer
 entities:
-  - location
-  - date
-  - timelength
-  - transinput
-  - language
-
-
+- timelength
+- time
+- date
+- title
+- location
+- transinput
+- language
+- dictation
+- description
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: Hey! How are you?
   utter_ask_location:
-  - text: "In which location?"
+  - text: In which location?
   utter_ask_date:
-  - text: " On which date?"
+  - text: ' On which date?'
   utter_tell_weather:
-  - text: "The weather on {date} in {location} is good."
+  - text: The weather on {date} in {location} is good.
   utter_set_timer:
-  - text: "Set timer for {timelength}."
+  - text: Set timer for {timelength} minutes.
   utter_translate:
-  - text: "Translation"
+  - text: Translation
   utter_dictation:
-  - text: "Dictation saved"
-
-
+  - text: Dictation saved
+  utter_addappointment:
+  - text: Appointment is added
 
 slots:
-#  date
-#  time
   location:
     type: text
     mappings:
@@ -56,38 +55,29 @@ slots:
     mappings:
     - type: from_entity
       entity: timelength
-#  transinput
   transinput:
     type: text
     mappings:
     - type: from_entity
       entity: transinput
-#  language
   language:
     type: text
     mappings:
     - type: from_entity
       entity: language
-  # dictation
   dictation:
     type: text
     mappings:
     - type: from_entity
       entity: dictation
-
-#  title 
-#  description
-#  reminder
-#  location
-#  Texttostore
-
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 forms:
   weather_form:
     required_slots:
-      - location
-      - date
+    - location
+    - date
+actions:
+- utter_addappointment
+- utter_set_timer

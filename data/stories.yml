@@ -52,13 +52,49 @@ stories:
   steps:
     - intent: ask_transinput_language
       entities:
-        - transinput: How are you
-        - language: french
+        - transinput: "How are you"
+        - language: "french"
     - action: utter_translate
 
 - story: dictation
   steps:
     - intent: ask_dictation
       entities:
-      - dictation: Buy bred beer eggs salad
+      - dictation: "Buy bred beer eggs salad"
     - action: utter_dictation
+
+- story: appointment
+  steps:
+    - intent: ask_addappointment
+      entities:
+        - title: "meeting"
+        - date: "21th of august"
+        - time: "12 o'clock"
+    - action: utter_addappointment
+
+- story: appointment
+  steps:
+    - intent: ask_addappointment
+      entities:
+        - date: "tomorrow"
+        - time: "4 o'clock"
+    - action: utter_addappointment
+- story: interactive_story_1
+  steps:
+  - intent: set_timer
+    entities:
+    - timelength: 20 minutes
+  - slot_was_set:
+    - timelength: 20 minutes
+  - action: utter_set_timer
+  - intent: ask_addappointment
+    entities:
+    - date: tomorrow
+    - timelength: '4'
+  - action: utter_addappointment
+  - intent: ask_addappointment
+    entities:
+    - date: 21th of april
+    - time: 3 o'clock pm
+    - title: meeting
+  - action: utter_addappointment

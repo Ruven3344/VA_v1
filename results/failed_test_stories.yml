@@ -16,7 +16,7 @@ stories:
   - action: utter_goodbye  # predicted: utter_ask_location
 - story: sad path 1 (.\tests\test_stories.yml)
   steps:
-  - intent: greet  # predicted: inform_date: hello
+  - intent: greet  # predicted: ask_weather: hello
   - action: utter_greet  # predicted: utter_ask_location
   - intent: mood_unhappy  # predicted: ask_weather: not good
   - action: utter_cheer_up  # predicted: utter_ask_location
@@ -25,7 +25,7 @@ stories:
   - action: utter_happy  # predicted: utter_ask_location
 - story: sad path 2 (.\tests\test_stories.yml)
   steps:
-  - intent: greet  # predicted: inform_date: hello
+  - intent: greet  # predicted: ask_weather: hello
   - action: utter_greet  # predicted: utter_ask_location
   - intent: mood_unhappy  # predicted: ask_weather: not good
   - action: utter_cheer_up  # predicted: utter_ask_location
@@ -47,5 +47,5 @@ stories:
   - action: utter_goodbye  # predicted: utter_ask_location
 - story: bot challenge (.\tests\test_stories.yml)
   steps:
-  - intent: bot_challenge  # predicted: inform_date: are you a bot?
+  - intent: bot_challenge  # predicted: ask_transinput_language: [are you](transinput) a [bot](transinput)?
   - action: utter_iamabot  # predicted: utter_ask_location

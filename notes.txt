@@ -1,7 +1,6 @@
 
+speech to text
 
----required data---
-safed in slots
 weather: 
 	date +
 	location +
@@ -22,11 +21,16 @@ read aloud:
 dictate text:
 	input +
 
-Executable scripts:
 
-weather
-timer
-translate
+entity translator to right input format
+
+
+Executable scripts:
+weather +
+timer +
+translate +
 calendar
 read loud
 dictate
+
+text to speech
