@@ -1,5 +1,5 @@
 
-speech to text
+speech to text +
 
 weather: 
 	date +
@@ -10,10 +10,10 @@ translation:
 	input +
 	language to translate + 
 calendar (google calendar)
-	date
-	time
-	title
-	describtion
+	date +
+	time +
+	title +
+	describtion (optional)
 	reminder (optional)
 read aloud:
 	file
