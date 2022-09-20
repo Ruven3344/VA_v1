@@ -1,0 +1,43 @@
+[
+  {
+    "text": "Create appointment next monday at 2 o'clock pm with the title buy pencils)",
+    "entities": [
+      {
+        "start": 19,
+        "end": 30,
+        "value": "next monday",
+        "entity": "date"
+      },
+      {
+        "start": 34,
+        "end": 46,
+        "value": "2 o'clock pm",
+        "entity": "time"
+      },
+      {
+        "start": 62,
+        "end": 74,
+        "value": "buy pencils)",
+        "entity": "title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 19,
+        "end": 30,
+        "confidence_entity": 0.9966456294059753,
+        "value": "next monday",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "time",
+        "start": 34,
+        "end": 46,
+        "confidence_entity": 0.5009860396385193,
+        "value": "2 o'clock pm",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

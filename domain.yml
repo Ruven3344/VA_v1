@@ -5,12 +5,8 @@ intents:
 - ask_transinput_language
 - ask_weather
 - inform_date
-- inform_description
 - inform_location
-- inform_reminder
-- inform_texttostore
-- inform_title
-- set_timer
+- ask_set_timer
 entities:
 - timelength
 - time
@@ -22,18 +18,16 @@ entities:
 - dictation
 - description
 responses:
-  utter_greet:
-  - text: Hey! How are you?
   utter_ask_location:
   - text: In which location?
   utter_ask_date:
-  - text: ' On which date?'
+  - text: On which date?
   utter_tell_weather:
   - text: The weather on {date} in {location} is good.
   utter_set_timer:
   - text: Set timer for {timelength} minutes.
   utter_translate:
-  - text: Translation
+  - text: translation complete
   utter_dictation:
   - text: Dictation saved
   utter_addappointment:
@@ -78,6 +72,10 @@ forms:
     required_slots:
     - location
     - date
+
 actions:
-- utter_addappointment
-- utter_set_timer
+- getweather(location, day)
+- countdown(t)
+- translator(content, language2, language1)
+- dictate(text)
+- createEvent()

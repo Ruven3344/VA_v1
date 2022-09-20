@@ -44,7 +44,7 @@ stories:
     - action: utter_tell_weather
 - story: timer1
   steps:
-    - intent: set_timer
+    - intent: ask_set_timer
       entities:
         - timelength: "30 minutes"
     - action: utter_set_timer
@@ -81,20 +81,27 @@ stories:
     - action: utter_addappointment
 - story: interactive_story_1
   steps:
-  - intent: set_timer
+  - intent: ask_set_timer
     entities:
     - timelength: 20 minutes
   - slot_was_set:
     - timelength: 20 minutes
   - action: utter_set_timer
+
+- story: appointment 1
+  steps:
   - intent: ask_addappointment
     entities:
     - date: tomorrow
     - timelength: '4'
   - action: utter_addappointment
+
+- story: appointment 2
+  steps:  
   - intent: ask_addappointment
     entities:
     - date: 21th of april
     - time: 3 o'clock pm
     - title: meeting
   - action: utter_addappointment
+

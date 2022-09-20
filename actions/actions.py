@@ -26,38 +26,85 @@
 #
 #         return []
 
+
+
+
 #------------------------------------------------------------------------------------------------------
-#weather modules https://pypi.org/project/python-weather/
-import python_weather
-import asyncio
+#weather modules OpenWeather
+#Account: ruven.peterhans@stud.kswe.ch password: Y8jYLzHZYqbE8Th
+# API Key: bfafaca964b064d947e7a5f32faef634
+
+#https://pypi.org/project/pyowm/
+from typing import Any, Text, Dict, List
 import os
+import pyowm
+from pyowm import OWM
+from pyowm.utils import config
+from pyowm.utils import timestamps
+from datetime import date, timedelta
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
 
-async def getweather():
-  # declare the client. format defaults to the metric system (celcius, km/h, etc.)
-  async with python_weather.Client(format=python_weather.IMPERIAL) as client:
 
-    # fetch a weather forecast from a city
-    weather = await client.get("location") #location
-  
-    # returns the current day's forecast temperature (int)
-    print(weather.current.temperature)
-  
-    # get the weather forecast for a few days
-    for forecast in weather.forecasts:
-      print(forecast.date, forecast.astronomy)
-  
-      # hourly forecasts
-      for hourly in forecast.hourly:
-        print(f' --> {hourly!r}')
+ class Getweather(Action):
 
-if __name__ == "__main__":
-  # see https://stackoverflow.com/questions/45600579/asyncio-event-loop-is-closed-when-getting-loop
-  # for more details
-  if os.name == "nt":
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+     def name(self) -> Text:
+         return "action_get_weather"
 
-  asyncio.run(getweather())
+     def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+         def getweather(location, day):
+            if day=='today':
+              d = date.today()
+              print(d)
+              owm1 = OWM('bfafaca964b064d947e7a5f32faef634')
+              owm2= owm1.weather_manager()
+
+              observation = owm2.weather_at_place(location+ ',' + 'CH')
+              w = observation.weather
+              k = w.detailed_status
+              x = w.temperature('celsius')
+              text='Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (location, k, x['temp_max'], x['temp_min'])
+
+         dispatcher.utter_message(text)
+
+         return []
+
+
+def getweather(location, day):
+  if day=='today':
+    d = date.today()
+    print(d)
+    owm1 = OWM('bfafaca964b064d947e7a5f32faef634')
+    owm2= owm1.weather_manager()
+
+    observation = owm2.weather_at_place(location+ ',' + 'CH')
+    w = observation.weather
+    k = w.detailed_status
+    x = w.temperature('celsius')
+    print('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (location, k, x['temp_max'], x['temp_min']))
+
+  if day == 'tomorrow':
+    d= date.today() + timedelta(days=1)
+    print(d)
+
+
+    owm1 = OWM('bfafaca964b064d947e7a5f32faef634')
+    owm2= owm1.weather_manager()
+
+    observation = owm2.three_hours_forecast(location+ ',' + 'ch', limit=8)#only weather in switzerland
+    w = observation.weather
+    k = w.detailed_status
+    x = w.temperature('celsius')
+    print('The weather tomorrow in %s is %s. The maximum temperature will be %0.2f and the minimum temperature will be %0.2f degree celcius' % (location, k, x['temp_max'], x['temp_min']))
+
+getweather('Genf','today')
+getweather('Genf','tomorrow')
 #------------------------------------------------------------------------------------------------------------
+
+# set timer
 
 # import the time module
 import time
@@ -72,24 +119,55 @@ def countdown(t):
         time.sleep(1)
         t -= 1
       
-    print('Timer ended')
-  
-  
-# input time in seconds
-t = timelength
-  
+    print('Fire in the hole!!')
+   
 # function call
-countdown(int(t))
+#countdown(int(15)) #in seconds
 
 #--------------------------------------------------------------------------------------------------------------
 
-#translator modules
+#translator 
 from python_translator import Translator
+def translator(content, language2, language1):
+  translator = Translator()
+  result = translator.translate(content,language2, language1)
 
-translator = Translator()
-result = translator.translate(transinput, "english", language)
+  print(result)
 
-print(result)
 
 #------------------------------------------------------------------------------------------------------------
+
+#dictator
+def dictate(text):
+  with open("C:/Users/ruven/Desktop/dictation.txt", 'w') as f:
+    f.write(text)
+
+
+
+
+#-------------------------------------------------------------------------------------
+
+#create appointment
+#password google account school:
+#ruven.peterhans@stud.kswe.ch
+#4rQwAV7fq9nNQXS
+
+
+
+
+# Imagine this function is part of a class which provides the necessary config data
+import win32com.client
+from win32com.client import Dispatch
+outlook = win32com.client.Dispatch("Outlook.Application")
+
+
+def createEvent():
+  appt = outlook.CreateItem(1) # AppointmentItem
+  appt.Start = "2022-9-12 16:10" # yyyy-MM-dd hh:mm
+  appt.Subject = "Fake meeting"
+  appt.Duration = 30 # In minutes (60 Minutes)
+  appt.Location = "The bat cave"
+
+  appt.Save()
+  appt.Send()
 
