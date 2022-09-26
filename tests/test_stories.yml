@@ -1,91 +1,162 @@
 #### This file contains tests to evaluate that your bot behaves as expected.
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
+
 stories:
-- story: happy path 1
+- story: weather1
   steps:
   - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
+      How is the weather [today]{"entity": "date"}
+    intent: ask_weather
+  - action: utter_ask_location
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      [in baden]{"entity": "location"}
+      intent: inform_location
+  - action: utter_tell_weather
 
-- story: happy path 2
+- story: weather2
   steps:
   - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
+      How is the weather in [baden]{"entity": "location"}
+    intent: ask_weather
+  - action: utter_ask_date
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+      [today]{"entity": "date"}
+      intent: inform_date
+  - action: utter_tell_weather
 
-- story: sad path 1
+- story: weather3
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
+      How is the weather [today]{"entity": "date"} in [baden]{"entity": "location"}
+    intent: ask_weather
+  - action: utter_tell_weather
 
-- story: sad path 2
-  steps:
+- story: weather4
+  steps: 
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+      Is it going to rain [tomorrow]{"entity": "date"} in [Wettingen]{"entity": "location"}
+    intent: ask_weather
+  - action: utter_tell_weather
 
-- story: sad path 3
+- story: timer1
   steps:
   - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+      Set a timer for [20 minutes]{"entity": "timelength"}
+    intent: ask_set_timer
+  - action: utter_set_timer
 
-- story: say goodbye
+- story: timer2
   steps:
   - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+      Create a [40 minute]{"entity": "timelength"} timer
+    intent: ask_set_timer
+  - action: utter_set_timer
 
-- story: bot challenge
+- story: timer3
   steps:
   - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+      Wake me up in [half an hour]{"entity": "timelength"}
+    intent: ask_set_timer
+  - action: utter_set_timer
+
+- story: timer4
+  steps:
+  - user: |
+      Start a [5 minute]{"entity": "timelength"} timer
+    intent: ask_set_timer
+  - action: utter_set_timer
+
+- story: translation1
+  steps: 
+  - user: |
+      Translate [I want to take the train]{"entity": "transinput"} into [spanish]{"entity": "language"}
+    intent: ask_transinput_language
+  - action: utter_translate
+
+- story: translation2
+  steps:
+  - user: |
+      Translate [Milk]{"entity": "transinput"} into [french]{"entity": "language"}
+    intent: ask_transinput_language
+  - action: utter_translate
+
+- story: translation3
+  steps:
+  - user: |
+      What does [playing football]{"entity": "transinput"} mean in [german]{"entity": "language"}
+    intent: ask_transinput_language
+  - action: utter_translate
+
+- story: translation4
+  steps:
+  - user: |
+      What is the word for [bottle]{"entity": "transinput"} in [russian]{"entity": "language"}
+    intent: ask_transinput_language
+  - action: utter_translate
+
+- story: dictation1
+  steps:
+  - user: |
+      Start dictation [milk, oranges, beer]{"entity": "dictation"}
+    intent: ask_dictation
+  - action: utter_dictation
+
+- story: dictation2
+  steps:
+  - user: |
+      Start dictation [I need to study for the english exam]{"entity": "dictation"}
+    intent: ask_dictation
+  - action: utter_dictation
+
+- story: dictation3
+  steps:
+  - user: |
+      Remember for me that I need to buy [apples, bananas and tomatos]{"entity": "dictation"}
+    intent: ask_dictation
+  - action: utter_dictation
+
+- story: dictation4
+  steps:
+  - user: |
+      Save for me [buy bread, study math and work out]{"entity": "dictation"}
+    intent: ask_dictation
+  - action: utter_dictation
+
+- story: appointment1
+  steps:
+  - user: |
+      Add an appointment [today]{"entity": "date"} at [4 o'clock pm]{"entity": "time"} with the title [meeting]{"entity": "title"}
+    intent: ask_addappointment
+  - action: utter_addappointment
+
+- story: appointment2
+  steps:
+  - user: |
+      Add an appointment on the [1st of april]{"entity": "date"} with the title [morning workout]{"entity": "title"} at [6 o'clock am]{"entity": "time"}
+    intent: ask_addappointment
+  - action: utter_addappointment
+
+- story: appointment3
+  steps:
+  - user: |
+      Create an appointment for [tomorrow]{"entity": "date"} with the title [cinema]{"entity": "title"} at [8 o'clock pm]{"entity": "time"}
+    intent: ask_addappointment
+  - action: utter_addappointment
+- story: appointment4
+  steps:
+  - user: |
+      Create an appointment with the called [work meeting]{"entity": "title"} at the [21st of november]{"entity": "date"} at [810 o'clock am]{"entity": "time"}
+    intent: ask_addappointment
+  - action: utter_addappointment
+
+
+
+
+
+
+
+
+
+
+

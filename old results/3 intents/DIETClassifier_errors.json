@@ -1,43 +1,528 @@
 [
   {
-    "text": "Create appointment next monday at 2 o'clock pm with the title buy pencils)",
+    "text": "Translate I want to take the train into spanish",
     "entities": [
       {
-        "start": 19,
-        "end": 30,
-        "value": "next monday",
-        "entity": "date"
+        "start": 10,
+        "end": 34,
+        "value": "I want to take the train",
+        "entity": "transinput"
       },
       {
-        "start": 34,
-        "end": 46,
-        "value": "2 o'clock pm",
-        "entity": "time"
+        "start": 40,
+        "end": 47,
+        "value": "spanish",
+        "entity": "language"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "transinput",
+        "start": 10,
+        "end": 24,
+        "confidence_entity": 0.8316173553466797,
+        "value": "I want to take",
+        "extractor": "DIETClassifier"
       },
       {
-        "start": 62,
-        "end": 74,
-        "value": "buy pencils)",
-        "entity": "title"
+        "entity": "language",
+        "start": 40,
+        "end": 47,
+        "confidence_entity": 0.998863697052002,
+        "value": "spanish",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What is the word for bottle in russian",
+    "entities": [
+      {
+        "start": 21,
+        "end": 27,
+        "value": "bottle",
+        "entity": "transinput"
+      },
+      {
+        "start": 31,
+        "end": 38,
+        "value": "russian",
+        "entity": "language"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "dictation",
+        "start": 12,
+        "end": 16,
+        "confidence_entity": 0.9081459641456604,
+        "value": "word",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "language",
+        "start": 31,
+        "end": 38,
+        "confidence_entity": 0.9716053009033203,
+        "value": "russian",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Start dictation I need to study for the english exam",
+    "entities": [
+      {
+        "start": 16,
+        "end": 52,
+        "value": "I need to study for the english exam",
+        "entity": "dictation"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "dictation",
+        "start": 16,
+        "end": 31,
+        "confidence_entity": 0.9803223013877869,
+        "value": "I need to study",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "language",
+        "start": 40,
+        "end": 52,
+        "confidence_entity": 0.7215943932533264,
+        "value": "english exam",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Remember for me that I need to buy apples, bananas and tomatos",
+    "entities": [
+      {
+        "start": 35,
+        "end": 62,
+        "value": "apples, bananas and tomatos",
+        "entity": "dictation"
       }
     ],
     "predicted_entities": [
       {
         "entity": "date",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.34412500262260437,
+        "value": "Remember",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "dictation",
+        "start": 21,
+        "end": 34,
+        "confidence_entity": 0.7951828837394714,
+        "value": "I need to buy",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "dictation",
+        "start": 51,
+        "end": 54,
+        "confidence_entity": 0.9993762373924255,
+        "value": "and",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Save for me buy bread, study math and work out",
+    "entities": [
+      {
+        "start": 12,
+        "end": 46,
+        "value": "buy bread, study math and work out",
+        "entity": "dictation"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "dictation",
+        "start": 12,
+        "end": 21,
+        "confidence_entity": 0.5679702162742615,
+        "value": "buy bread",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "dictation",
+        "start": 23,
+        "end": 28,
+        "confidence_entity": 0.5499890446662903,
+        "value": "study",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "dictation",
+        "start": 34,
+        "end": 46,
+        "confidence_entity": 0.6550313234329224,
+        "value": "and work out",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Add an appointment today at 4 o'clock pm with the title meeting",
+    "entities": [
+      {
         "start": 19,
-        "end": 30,
-        "confidence_entity": 0.9966456294059753,
-        "value": "next monday",
+        "end": 24,
+        "value": "today",
+        "entity": "date"
+      },
+      {
+        "start": 28,
+        "end": 40,
+        "value": "4 o'clock pm",
+        "entity": "time"
+      },
+      {
+        "start": 56,
+        "end": 63,
+        "value": "meeting",
+        "entity": "title"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 28,
+        "end": 40,
+        "confidence_entity": 0.6424309611320496,
+        "value": "4 o'clock pm",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "title",
+        "start": 56,
+        "end": 63,
+        "confidence_entity": 0.9951914548873901,
+        "value": "meeting",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Add an appointment on the 1st of april with the title morning workout at 6 o'clock am",
+    "entities": [
+      {
+        "start": 26,
+        "end": 38,
+        "value": "1st of april",
+        "entity": "date"
+      },
+      {
+        "start": 54,
+        "end": 69,
+        "value": "morning workout",
+        "entity": "title"
+      },
+      {
+        "start": 73,
+        "end": 85,
+        "value": "6 o'clock am",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 30,
+        "end": 32,
+        "confidence_entity": 0.9966968297958374,
+        "value": "of",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "dictation",
+        "start": 54,
+        "end": 69,
+        "confidence_entity": 0.3440770208835602,
+        "value": "morning workout",
         "extractor": "DIETClassifier"
       },
       {
         "entity": "time",
-        "start": 34,
-        "end": 46,
-        "confidence_entity": 0.5009860396385193,
-        "value": "2 o'clock pm",
+        "start": 73,
+        "end": 85,
+        "confidence_entity": 0.2989017069339752,
+        "value": "6 o'clock am",
         "extractor": "DIETClassifier"
       }
     ]
+  },
+  {
+    "text": "Create an appointment for tomorrow with the title cinema at 8 o'clock pm",
+    "entities": [
+      {
+        "start": 26,
+        "end": 34,
+        "value": "tomorrow",
+        "entity": "date"
+      },
+      {
+        "start": 50,
+        "end": 56,
+        "value": "cinema",
+        "entity": "title"
+      },
+      {
+        "start": 60,
+        "end": 72,
+        "value": "8 o'clock pm",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 26,
+        "end": 34,
+        "confidence_entity": 0.9195520281791687,
+        "value": "tomorrow",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "time",
+        "start": 60,
+        "end": 72,
+        "confidence_entity": 0.5751516222953796,
+        "value": "8 o'clock pm",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Create an appointment with the called work meeting at the 21st of november at 8 o'clock am",
+    "entities": [
+      {
+        "start": 38,
+        "end": 50,
+        "value": "work meeting",
+        "entity": "title"
+      },
+      {
+        "start": 58,
+        "end": 74,
+        "value": "21st of november",
+        "entity": "date"
+      },
+      {
+        "start": 78,
+        "end": 90,
+        "value": "8 o'clock am",
+        "entity": "time"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "time",
+        "start": 38,
+        "end": 42,
+        "confidence_entity": 0.4592226445674896,
+        "value": "work",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "title",
+        "start": 43,
+        "end": 50,
+        "confidence_entity": 0.9928303360939026,
+        "value": "meeting",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "date",
+        "start": 63,
+        "end": 65,
+        "confidence_entity": 0.9963545799255371,
+        "value": "of",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "time",
+        "start": 66,
+        "end": 74,
+        "confidence_entity": 0.5274312496185303,
+        "value": "november",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "time",
+        "start": 78,
+        "end": 90,
+        "confidence_entity": 0.2969885468482971,
+        "value": "8 o'clock am",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "on the 21th of april",
+    "entities": [
+      {
+        "start": 7,
+        "end": 20,
+        "value": "21th of april",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 7,
+        "end": 14,
+        "confidence_entity": 0.9980681538581848,
+        "value": "21th of",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "next saturday",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "next saturday",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.9981799125671387,
+        "value": "next",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Aarau",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "Aarau",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "date",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.6210834980010986,
+        "value": "Aarau",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "How is the weather today",
+    "entities": [
+      {
+        "start": 19,
+        "end": 24,
+        "value": "today",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "How is the weather today in baden",
+    "entities": [
+      {
+        "start": 19,
+        "end": 24,
+        "value": "today",
+        "entity": "date"
+      },
+      {
+        "start": 28,
+        "end": 33,
+        "value": "baden",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "location",
+        "start": 28,
+        "end": 33,
+        "confidence_entity": 0.9983260035514832,
+        "value": "baden",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Is it going to rain tomorrow in Wettingen",
+    "entities": [
+      {
+        "start": 20,
+        "end": 28,
+        "value": "tomorrow",
+        "entity": "date"
+      },
+      {
+        "start": 32,
+        "end": 41,
+        "value": "Wettingen",
+        "entity": "location"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "dictation",
+        "start": 12,
+        "end": 14,
+        "confidence_entity": 0.6621007919311523,
+        "value": "to",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "date",
+        "start": 20,
+        "end": 28,
+        "confidence_entity": 0.9158954620361328,
+        "value": "tomorrow",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "location",
+        "start": 32,
+        "end": 41,
+        "confidence_entity": 0.7735558748245239,
+        "value": "Wettingen",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Wake me up in half an hour",
+    "entities": [
+      {
+        "start": 14,
+        "end": 26,
+        "value": "half an hour",
+        "entity": "timelength"
+      }
+    ],
+    "predicted_entities": []
   }
 ]

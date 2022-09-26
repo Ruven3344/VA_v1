@@ -1,0 +1,42 @@
+[
+  {
+    "text": "on the 21th of april",
+    "intent": "inform_date",
+    "intent_prediction": {
+      "name": "ask_addappointment",
+      "confidence": 0.9973414540290833
+    }
+  },
+  {
+    "text": "next saturday",
+    "intent": "inform_date",
+    "intent_prediction": {
+      "name": "ask_addappointment",
+      "confidence": 0.9534925222396851
+    }
+  },
+  {
+    "text": "Aarau",
+    "intent": "inform_location",
+    "intent_prediction": {
+      "name": "ask_transinput_language",
+      "confidence": 0.5832018256187439
+    }
+  },
+  {
+    "text": "Is it going to rain tomorrow in Wettingen",
+    "intent": "ask_weather",
+    "intent_prediction": {
+      "name": "inform_location",
+      "confidence": 0.9585030674934387
+    }
+  },
+  {
+    "text": "Wake me up in half an hour",
+    "intent": "ask_set_timer",
+    "intent_prediction": {
+      "name": "ask_transinput_language",
+      "confidence": 0.8531470894813538
+    }
+  }
+]

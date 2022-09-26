@@ -1,0 +1,76 @@
+{
+  "inform_location": {
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1-score": 0.75,
+    "support": 4,
+    "confused_with": {
+      "inform_date": 1
+    }
+  },
+  "ask_transinput_language": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "ask_addappointment": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "ask_weather": {
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1-score": 0.8571428571428571,
+    "support": 4,
+    "confused_with": {
+      "inform_location": 1
+    }
+  },
+  "ask_dictation": {
+    "precision": 0.8,
+    "recall": 1.0,
+    "f1-score": 0.888888888888889,
+    "support": 4,
+    "confused_with": {}
+  },
+  "ask_set_timer": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "inform_date": {
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1-score": 0.75,
+    "support": 4,
+    "confused_with": {
+      "ask_dictation": 1
+    }
+  },
+  "accuracy": 0.8928571428571429,
+  "macro avg": {
+    "precision": 0.9,
+    "recall": 0.8928571428571429,
+    "f1-score": 0.8922902494331065,
+    "support": 28
+  },
+  "weighted avg": {
+    "precision": 0.9,
+    "recall": 0.8928571428571429,
+    "f1-score": 0.8922902494331065,
+    "support": 28
+  },
+  "micro avg": {
+    "precision": 0.8928571428571429,
+    "recall": 0.8928571428571429,
+    "f1-score": 0.8928571428571429,
+    "support": 28
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "date": {
+    "precision": 1.0,
+    "recall": 0.7619047619047619,
+    "f1-score": 0.8648648648648648,
+    "support": 21,
+    "confused_with": {}
+  },
+  "title": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.5,
+    "support": 6,
+    "confused_with": {
+      "dictation": 3
+    }
+  },
+  "time": {
+    "precision": 0.9411764705882353,
+    "recall": 1.0,
+    "f1-score": 0.9696969696969697,
+    "support": 16,
+    "confused_with": {}
+  },
+  "timelength": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "location": {
+    "precision": 1.0,
+    "recall": 0.7142857142857143,
+    "f1-score": 0.8333333333333333,
+    "support": 7,
+    "confused_with": {}
+  },
+  "dictation": {
+    "precision": 0.6923076923076923,
+    "recall": 0.8181818181818182,
+    "f1-score": 0.7500000000000001,
+    "support": 22,
+    "confused_with": {
+      "transinput": 1
+    }
+  },
+  "transinput": {
+    "precision": 0.8571428571428571,
+    "recall": 0.6,
+    "f1-score": 0.7058823529411764,
+    "support": 10,
+    "confused_with": {}
+  },
+  "language": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.8837209302325582,
+    "recall": 0.8,
+    "f1-score": 0.839779005524862,
+    "support": 95
+  },
+  "macro avg": {
+    "precision": 0.9363283775048481,
+    "recall": 0.7784632034632034,
+    "f1-score": 0.827972190104543,
+    "support": 95
+  },
+  "weighted avg": {
+    "precision": 0.9038002245432587,
+    "recall": 0.8,
+    "f1-score": 0.832310216211145,
+    "support": 95
+  },
+  "accuracy": 0.8717948717948718
+}

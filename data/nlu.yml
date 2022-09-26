@@ -4,108 +4,109 @@ nlu:
   examples: |
     - How is the weather
     - How is the weather [tomorrow](date)
-    - Tell me the weather today in [Baden](location)
-    - Tell me the weather today in [Gansingen](location)
-    - Is the weather [today](date) good 
-    - Is the weather bad [today](date)
-    - Is the weather [next monday](date) good in [Gansingen](location)
-    - How is the weather [today](date) in [Wettingen](location)
-    - How is the weather [tomorrow](date) in [Baden](location)
-    - Is it going to rain [the day after tormorrow](date) in [Bern](location)
-    - Is it going to be sunny [the day after tormorrow](date) in [Bern](location)
-    - What's the weather forecast for [tomorrow](date)
-    - What's the weather forecast for [next Tuesday](date) in [Zürich](location)
-    - Will it be foggy [tomorrow](date)
-    - Is it going to snow [in the afternoon](date) in [Bern](location)
-
+   # - Tell me the weather today in [Baden](location)
+  #  - Tell me the weather today in [Gansingen](location)
+   # - Is the weather [today](date) good 
+  #  - Is the weather bad [today](date)
+ #   - Is the weather [next monday](date) good in [Gansingen](location)
+#    - How is the weather [today](date) in [Wettingen](location)
+#    - How is the weather [tomorrow](date) in [Baden](location)
+#    - Is it going to rain [the day after tormorrow](date) in [Bern](location)
+#    - Is it going to be sunny [the day after tormorrow](date) in [Bern](location)
+ #   - What's the weather forecast for [tomorrow](date)
+  #  - What's the weather forecast for [next Tuesday](date) in [Zürich](location)
+   # - Will it be foggy [tomorrow](date)
+    #- Is it going to snow [in the afternoon](date) in [Bern](location)
 
 - intent: inform_location
   examples: |
     - In [Gansingen](location)
-    - In [Baden](location)
-    - In [Wil](location)
-    - In [Spreitenbach](location)
-    - I want to know the weather for [Freiburg](location)
-    - I would like to know the weather for [Bern](location)
-    - I would like to have the weather forecast for [Baden](location)
-    - For [Bern](location)
-    - For [Zürich](location)
-    - I'm in [Genf](location)
-    - I'm in [Zug](location)
-    - I'm in [Aarau](location)
-    - [Aarau](location)
-    - [Bern](location)
-    - [Genf](location)
-    - 
+   # - In [Baden](location)
+   # - In [Wil](location)
+  #  - In [Spreitenbach](location)
+  #  - I want to know the weather for [Freiburg](location)
+   # - I would like to know the weather for [Bern](location)
+   # - I would like to have the weather forecast for [Baden](location)
+  #  - For [Bern](location)
+ #   - For [Zürich](location)
+#    - I'm in [Genf](location)
+#    - I'm in [Zug](location)
+#    - I'm in [Aarau](location)
+#    - [Aarau](location)
+#    - [Bern](location)
+#    - [Genf](location)
+ 
 - intent: inform_date
   examples: |
-    - today
-    - tomorrow
-    - the day after tomorrow
-    - on the 21th of april
-    - on the 22th of november
-    - on 15th of january
-    - next monday
-    - next tuesday
-    - next saturday
-    - next thirsday
-    - next wednesday
-    - next sunday
-    - 
+    - In [Gansingen](location)
+   # - In [Baden](location)
+   # - In [Wil](location)
+  #  - In [Spreitenbach](location)
+  #  - I want to know the weather for [Freiburg](location)
+   # - I would like to know the weather for [Bern](location)
+   # - I would like to have the weather forecast for [Baden](location)
+  #  - For [Bern](location)
+ #   - For [Zürich](location)
+#    - I'm in [Genf](location)
+#    - I'm in [Zug](location)
+#    - I'm in [Aarau](location)
+#    - [Aarau](location)
+#    - [Bern](location)
+#    - [Genf](location)
 - intent: ask_set_timer
   examples: |
     - Set a timer for [20 minutes](timelength)
     - Set a timer for [45 minutes](timelength)
-    - Create a timer for [5 minutes](timelength)
-    - Create a timer for [half an hour](timelength)
-    - Wake me up in [half an hour](timelength)
-    - Wake me up in an [hour](timelength)
-    - set a timer for [20 minutes](timelength)
-    - Set a timer for [half an hour](timelength)
-    - I want to wake in [one and a half hour](timelength)
-    - I want to wake up in [an hour](timelength)
-    - I would like to wake up in [two hours](timelength)
-    - I would like to wake up in [half an hour](timelength)
-    - Make a [20 minute](timelength) timer
-    - Create a [10 minute](timelength) timer
-    - Create a [50 minute](timelength) timer
+  #  - Create a timer for [5 minutes](timelength)
+  #  - Create a timer for [half an hour](timelength)
+ #   - Wake me up in [half an hour](timelength)
+#    - Wake me up in an [hour](timelength)
+#    - set a timer for [20 minutes](timelength)
+  #  - Set a timer for [half an hour](timelength)
+ #   - I want to wake in [one and a half hour](timelength)
+ #   - I want to wake up in [an hour](timelength)
+ #   - I would like to wake up in [two hours](timelength)
+ #   - I would like to wake up in [half an hour](timelength)
+ #   - Make a [20 minute](timelength) timer
+ #   - Create a [10 minute](timelength) timer
+ #   - Create a [50 minute](timelength) timer
 
 - intent: ask_transinput_language
   examples: |
     - Translate [I want to play football](transinput) into [french](language)
-    - Translate [How are you today](transinput) into [italian](language)
-    - What does [boardgame](transinput) mean in [spanish](language)
-    - What does [milk](transinput) mean in [german](language)
-    - What does [I play football](transinput) mean in [french](language)
-    - Translate [you are dumb](transinput) into [french](language)
-    - Translate [human](transinput) into [italian](language)
-    - Translate [I want to play basketball](transinput) into [german](language)
-    - Translate [My name is Frank](transinput) into [spanish](language)
-    - Traslate into [spanish](language) [My name is Frank](transinput)
+   # - Translate [How are you today](transinput) into [italian](language)
+   # - What does [boardgame](transinput) mean in [spanish](language)
+  #  - What does [milk](transinput) mean in [german](language)
+ #   - What does [I play football](transinput) mean in [french](language)
+#    - Translate [you are dumb](transinput) into [french](language)
+  #  - Translate [human](transinput) into [italian](language)
+  #  - Translate [I want to play basketball](transinput) into [german](language)
+  #  - Translate [My name is Frank](transinput) into [spanish](language)
+  #  - Traslate into [spanish](language) [My name is Frank](transinput)
 
 
 - intent: ask_dictation
   examples: |
     - Start dictation [I need to go buy beer and breed](dictation)
-    - Start dictation [No one knows anything](dictation)
-    - Start dictation [Dear Mr Morrow i would like to request a new credit card greetings Mark](dictation)
-    - Save for me [I want to play football later, thats why i need to do my homework](dictation)
-    - Save for me [Psychology, philosophy, math](dictation)
-    - Start dictation [Do homework, wash clothes, pay bills, try out new basketball](dictation)
-    - Write down [safe description for settings](dictation)
-    - Write down for me [eggs, onions, garlic, pencils](dictation)
-    - I want to remember [apples, bananas and tomatoes](dictation)
-    - I want to remember [tennis, soccer and swimming](dictation)
+ #   - Start dictation [No one knows anything](dictation)
+ #   - Start dictation [Dear Mr Morrow i would like to request a new credit card greetings Mark](dictation)
+ #   - Save for me [I want to play football later, thats why i need to do my homework](dictation)
+ #   - Save for me [Psychology, philosophy, math](dictation)
+ #   - Start dictation [Do homework, wash clothes, pay bills, try out new basketball](dictation)
+ #   - Write down [safe description for settings](dictation)
+ #   - Write down for me [eggs, onions, garlic, pencils](dictation)
+ #   - I want to remember [apples, bananas and tomatoes](dictation)
+ #   - I want to remember [tennis, soccer and swimming](dictation)
     
 - intent: ask_addappointment
   examples: |
     - Add an appointment [tomorrow](date) at [12 o'clock](time) with the title [meeting with Ben](title)
-    - Add an appointment at the [21th of august](date) at [4 o'clock](time) #add default name appointment
-    - Create appointment [next monday](date) at [2 o'clock pm](time) with the title [buy pencils)](title)
-    - Create appointment with the title [buy pencils](title) [21th of april](date) at [7 o'clock pm](time)
-    - Create an appointment with the title [bought pencils](title) [11th of march](date) at [2 o'clock pm](time)
-    - Add an appointment at the [21th of april](date) at [9 o'clock pm](time) with the title [groceries](title)
-    - Add appointment at the [21th of april](date) at [3 o'clock pm](time) with the title [get child](title)
-    - Insert an appointment at the [23th of december](date) with the title [meeting](title)
-    - Insert appointment at the [21th of april](date) at [3 o'clock pm](time) with the title [meeting](title)
-    - Insert appointment during the [2nd april](date) at [4 o'clock am](time)
+ #   - Add an appointment at the [21th of august](date) at [4 o'clock](time) #add default name appointment
+ #   - Create appointment [next monday](date) at [2 o'clock pm](time) with the title [buy pencils)](title)
+ #   - Create appointment with the title [buy pencils](title) [21th of april](date) at [7 o'clock pm](time)
+ #   - Create an appointment with the title [bought pencils](title) [11th of march](date) at [2 o'clock pm](time)
+ #   - Add an appointment at the [21th of april](date) at [9 o'clock pm](time) with the title [groceries](title)
+ #   - Add appointment at the [21th of april](date) at [3 o'clock pm](time) with the title [get child](title)
+ #   - Insert an appointment at the [23th of december](date) with the title [meeting](title)
+ #   - Insert appointment at the [21th of april](date) at [3 o'clock pm](time) with the title [meeting](title)
+ #   - Insert appointment during the [2nd april](date) at [4 o'clock am](time)

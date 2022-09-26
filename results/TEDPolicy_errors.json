@@ -1,0 +1,380 @@
+[
+  {
+    "text": "Translate Milk into french",
+    "entities": [
+      {
+        "start": 10,
+        "end": 14,
+        "value": "Milk",
+        "entity": "transinput"
+      },
+      {
+        "start": 20,
+        "end": 26,
+        "value": "french",
+        "entity": "language"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "What does playing football mean in german",
+    "entities": [
+      {
+        "text": "What does playing football mean in german",
+        "start": 10,
+        "end": 26,
+        "entity": "transinput",
+        "value": "playing football"
+      },
+      {
+        "text": "What does playing football mean in german",
+        "start": 35,
+        "end": 41,
+        "entity": "language",
+        "value": "german"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "What is the word for bottle in russian",
+    "entities": [
+      {
+        "text": "What is the word for bottle in russian",
+        "start": 21,
+        "end": 27,
+        "entity": "transinput",
+        "value": "bottle"
+      },
+      {
+        "text": "What is the word for bottle in russian",
+        "start": 31,
+        "end": 38,
+        "entity": "language",
+        "value": "russian"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Start dictation milk, oranges, beer",
+    "entities": [
+      {
+        "text": "Start dictation milk, oranges, beer",
+        "start": 16,
+        "end": 35,
+        "entity": "dictation",
+        "value": "milk, oranges, beer"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Start dictation I need to study for the english exam",
+    "entities": [
+      {
+        "text": "Start dictation I need to study for the english exam",
+        "start": 16,
+        "end": 52,
+        "entity": "dictation",
+        "value": "I need to study for the english exam"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Remember for me that I need to buy apples, bananas and tomatos",
+    "entities": [
+      {
+        "text": "Remember for me that I need to buy apples, bananas and tomatos",
+        "start": 35,
+        "end": 62,
+        "entity": "dictation",
+        "value": "apples, bananas and tomatos"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Save for me buy bread, study math and work out",
+    "entities": [
+      {
+        "text": "Save for me buy bread, study math and work out",
+        "start": 12,
+        "end": 46,
+        "entity": "dictation",
+        "value": "buy bread, study math and work out"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Add an appointment today at 4 o'clock pm with the title meeting",
+    "entities": [
+      {
+        "text": "Add an appointment today at 4 o'clock pm with the title meeting",
+        "start": 19,
+        "end": 24,
+        "entity": "date",
+        "value": "today"
+      },
+      {
+        "text": "Add an appointment today at 4 o'clock pm with the title meeting",
+        "start": 28,
+        "end": 40,
+        "entity": "time",
+        "value": "4 o'clock pm"
+      },
+      {
+        "text": "Add an appointment today at 4 o'clock pm with the title meeting",
+        "start": 56,
+        "end": 63,
+        "entity": "title",
+        "value": "meeting"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Add an appointment on the 1st of april with the title morning workout at 6 o'clock am",
+    "entities": [
+      {
+        "text": "Add an appointment on the 1st of april with the title morning workout at 6 o'clock am",
+        "start": 26,
+        "end": 38,
+        "entity": "date",
+        "value": "1st of april"
+      },
+      {
+        "text": "Add an appointment on the 1st of april with the title morning workout at 6 o'clock am",
+        "start": 54,
+        "end": 69,
+        "entity": "title",
+        "value": "morning workout"
+      },
+      {
+        "text": "Add an appointment on the 1st of april with the title morning workout at 6 o'clock am",
+        "start": 73,
+        "end": 85,
+        "entity": "time",
+        "value": "6 o'clock am"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Create an appointment for tomorrow with the title cinema at 8 o'clock pm",
+    "entities": [
+      {
+        "text": "Create an appointment for tomorrow with the title cinema at 8 o'clock pm",
+        "start": 26,
+        "end": 34,
+        "entity": "date",
+        "value": "tomorrow"
+      },
+      {
+        "text": "Create an appointment for tomorrow with the title cinema at 8 o'clock pm",
+        "start": 50,
+        "end": 56,
+        "entity": "title",
+        "value": "cinema"
+      },
+      {
+        "text": "Create an appointment for tomorrow with the title cinema at 8 o'clock pm",
+        "start": 60,
+        "end": 72,
+        "entity": "time",
+        "value": "8 o'clock pm"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "How is the weather today",
+    "entities": [
+      {
+        "start": 19,
+        "end": 24,
+        "value": "today",
+        "entity": "date"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "in baden\nintent: inform_location",
+    "entities": [
+      {
+        "text": "in baden\nintent: inform_location",
+        "start": 0,
+        "end": 8,
+        "entity": "location",
+        "value": "in baden"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Create an appointment with the called work meeting at the 21st of november at 810 o'clock am",
+    "entities": [
+      {
+        "text": "Create an appointment with the called work meeting at the 21st of november at 810 o'clock am",
+        "start": 38,
+        "end": 50,
+        "entity": "title",
+        "value": "work meeting"
+      },
+      {
+        "text": "Create an appointment with the called work meeting at the 21st of november at 810 o'clock am",
+        "start": 58,
+        "end": 74,
+        "entity": "date",
+        "value": "21st of november"
+      },
+      {
+        "text": "Create an appointment with the called work meeting at the 21st of november at 810 o'clock am",
+        "start": 78,
+        "end": 92,
+        "entity": "time",
+        "value": "810 o'clock am"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "How is the weather in baden",
+    "entities": [
+      {
+        "text": "How is the weather in baden",
+        "start": 22,
+        "end": 27,
+        "entity": "location",
+        "value": "baden"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "today\nintent: inform_date",
+    "entities": [
+      {
+        "text": "today\nintent: inform_date",
+        "start": 0,
+        "end": 5,
+        "entity": "date",
+        "value": "today"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "How is the weather today in baden",
+    "entities": [
+      {
+        "text": "How is the weather today in baden",
+        "start": 19,
+        "end": 24,
+        "entity": "date",
+        "value": "today"
+      },
+      {
+        "text": "How is the weather today in baden",
+        "start": 28,
+        "end": 33,
+        "entity": "location",
+        "value": "baden"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Is it going to rain tomorrow in Wettingen",
+    "entities": [
+      {
+        "text": "Is it going to rain tomorrow in Wettingen",
+        "start": 20,
+        "end": 28,
+        "entity": "date",
+        "value": "tomorrow"
+      },
+      {
+        "text": "Is it going to rain tomorrow in Wettingen",
+        "start": 32,
+        "end": 41,
+        "entity": "location",
+        "value": "Wettingen"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Set a timer for 20 minutes",
+    "entities": [
+      {
+        "start": 16,
+        "end": 26,
+        "value": "20 minutes",
+        "entity": "timelength"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Create a 40 minute timer",
+    "entities": [
+      {
+        "start": 9,
+        "end": 18,
+        "value": "40 minute",
+        "entity": "timelength"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Wake me up in half an hour",
+    "entities": [
+      {
+        "text": "Wake me up in half an hour",
+        "start": 14,
+        "end": 26,
+        "entity": "timelength",
+        "value": "half an hour"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Start a 5 minute timer",
+    "entities": [
+      {
+        "start": 8,
+        "end": 16,
+        "value": "5 minute",
+        "entity": "timelength"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Translate I want to take the train into spanish",
+    "entities": [
+      {
+        "text": "Translate I want to take the train into spanish",
+        "start": 10,
+        "end": 34,
+        "entity": "transinput",
+        "value": "I want to take the train"
+      },
+      {
+        "text": "Translate I want to take the train into spanish",
+        "start": 40,
+        "end": 47,
+        "entity": "language",
+        "value": "spanish"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

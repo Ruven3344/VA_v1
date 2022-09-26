@@ -1,0 +1,46 @@
+# test nlu
+version: "3.1"
+nlu:
+- intent: ask_transinput_language
+  examples: |
+    - Translate [I want to take the train](transinput) into [spanish](language)
+    - Translate [Milk](transinput) into [french](language)
+    - What does [playing football](transinput) mean in [german](language)
+    - What is the word for [bottle](transinput) in [russian](language)
+- intent: ask_dictation
+  examples: |
+    - Start dictation [milk, oranges, beer](dictation)
+    - Start dictation [I need to study for the english exam](dictation)
+    - Remember for me that I need to buy [apples, bananas and tomatos](dictation)
+    - Save for me [buy bread, study math and work out](dictation)
+- intent: ask_addappointment  
+  examples: |
+    - Add an appointment [today](date) at [4 o'clock pm](time) with the title [meeting](title)
+    - Add an appointment on the [1st of april](date) with the title [morning workout](title) at [6 o'clock am](time)
+    - Create an appointment for [tomorrow](date) with the title [cinema](title) at [8 o'clock pm](time)
+    - Create an appointment with the called [work meeting](title) at the [21st of november](date) at [8 o'clock am](time)
+- intent: inform_date
+  examples: |
+    - on the [21th of april](date)
+    - [next saturday](date)
+    - [today](date)
+    - [the day after tomorrow](date)
+- intent: inform_location
+  examples: |
+    - in [Baden](location)
+    - [Aarau](location)
+    - in [Wil](location)
+    - [Genf](location)
+- intent: ask_weather
+  examples: |
+    - How is the weather [today](date)
+    - How is the weather in [baden](location)
+    - How is the weather [today](date) in [baden](location)
+    - Is it going to rain [tomorrow](date) in [Wettingen](location)
+
+- intent: ask_set_timer
+  examples: |
+    - Set a timer for [20 minutes](timelength)
+    - Create a [40 minute](timelength) timer
+    - Wake me up in [half an hour](timelength)
+    - Start a [5 minute](timelength) timer

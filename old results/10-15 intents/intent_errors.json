@@ -1,0 +1,66 @@
+[
+  {
+    "text": "What is the word for bottle in russian",
+    "intent": "ask_transinput_language",
+    "intent_prediction": {
+      "name": "ask_weather",
+      "confidence": 0.890121579170227
+    }
+  },
+  {
+    "text": "on the 21th of april",
+    "intent": "inform_date",
+    "intent_prediction": {
+      "name": "ask_addappointment",
+      "confidence": 0.9996115565299988
+    }
+  },
+  {
+    "text": "next saturday",
+    "intent": "inform_date",
+    "intent_prediction": {
+      "name": "ask_weather",
+      "confidence": 0.9995550513267517
+    }
+  },
+  {
+    "text": "today",
+    "intent": "inform_date",
+    "intent_prediction": {
+      "name": "ask_weather",
+      "confidence": 0.9997316002845764
+    }
+  },
+  {
+    "text": "the day after tomorrow",
+    "intent": "inform_date",
+    "intent_prediction": {
+      "name": "ask_weather",
+      "confidence": 0.9999964237213135
+    }
+  },
+  {
+    "text": "in Baden",
+    "intent": "inform_location",
+    "intent_prediction": {
+      "name": "inform_date",
+      "confidence": 0.5711256861686707
+    }
+  },
+  {
+    "text": "Aarau",
+    "intent": "inform_location",
+    "intent_prediction": {
+      "name": "inform_date",
+      "confidence": 0.5071737766265869
+    }
+  },
+  {
+    "text": "Genf",
+    "intent": "inform_location",
+    "intent_prediction": {
+      "name": "inform_date",
+      "confidence": 0.49511775374412537
+    }
+  }
+]

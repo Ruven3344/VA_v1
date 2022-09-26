@@ -27,11 +27,11 @@ responses:
   utter_set_timer:
   - text: Set timer for {timelength} minutes.
   utter_translate:
-  - text: translation complete
+  - text: translation of {transinput} into {language} completed
   utter_dictation:
-  - text: Dictation saved
+  - text: Dictation saved, you said {dictation}
   utter_addappointment:
-  - text: Appointment is added
+  - text: Appointment is added. Date {date} time {time} title {title}
 
 slots:
   location:

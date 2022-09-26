@@ -1,0 +1,158 @@
+version: "3.1"
+stories:
+- story: translation3 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_transinput_language
+    entities:
+    - transinput: playing football
+  - slot_was_set:
+    - transinput: playing football
+  - slot_was_set:
+    - language: german
+  - action: utter_translate
+- story: translation4 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_transinput_language  # predicted: ask_addappointment: What is the word for bottle in russian
+    entities: []
+  - slot_was_set:
+    - transinput: bottle
+  - slot_was_set:
+    - language: russian
+  - action: utter_translate
+- story: dictation1 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_dictation
+    entities:
+    - dictation: milk, oranges, beer
+  - slot_was_set:
+    - dictation: milk, oranges, beer
+  - action: utter_dictation
+- story: dictation2 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_dictation
+    entities:
+    - dictation: I need to study for the english exam
+  - slot_was_set:
+    - dictation: I need to study for the english exam
+  - action: utter_dictation
+- story: dictation3 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_dictation  # predicted: ask_dictation: Remember for me that [I need to buy](dictation) apples, bananas [and](dictation) [tomatos](date)
+    entities: []
+  - slot_was_set:
+    - dictation: apples, bananas and tomatos
+  - action: utter_dictation
+- story: dictation4 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_dictation
+    entities:
+    - dictation: buy bread, study math and work out
+  - slot_was_set:
+    - dictation: buy bread, study math and work out
+  - action: utter_dictation
+- story: appointment1 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_addappointment
+    entities:
+    - date: today
+    - time: 4 o'clock pm
+    - title: meeting
+  - slot_was_set:
+    - date: today
+  - action: utter_addappointment
+- story: appointment2 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_addappointment
+    entities:
+    - title: morning workout
+    - time: 6 o'clock am
+  - slot_was_set:
+    - date: 1st of april
+  - action: utter_addappointment
+- story: appointment3 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_addappointment
+    entities:
+    - date: tomorrow
+    - time: 8 o'clock pm
+  - slot_was_set:
+    - date: tomorrow
+  - action: utter_addappointment
+- story: weather1 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_weather
+    entities:
+    - date: today
+  - slot_was_set:
+    - date: today
+  - action: utter_ask_location
+  - entities: []
+    user: |-
+      [in baden](location)
+      intent: inform_location
+  - slot_was_set:
+    - location: in baden
+  - action: utter_tell_weather  # predicted: utter_ask_location
+- story: appointment4 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_addappointment
+    entities:
+    - time: 810 o'clock am
+  - slot_was_set:
+    - date: 21st of november
+  - action: utter_addappointment
+- story: weather2 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_weather
+    entities:
+    - location: baden  # predicted: title: baden
+  - slot_was_set:
+    - location: baden
+  - action: utter_ask_date
+  - entities:
+    - date: today
+    user: |-
+      [today](date)
+      intent: inform_date
+  - slot_was_set:
+    - date: today
+  - action: utter_tell_weather  # predicted: action_listen
+- story: weather3 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_weather
+    entities:
+    - date: today
+    - location: baden  # predicted: title: baden
+  - slot_was_set:
+    - location: baden
+  - slot_was_set:
+    - date: today
+  - action: utter_tell_weather
+- story: weather4 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_weather  # predicted: ask_addappointment: Is it [going to](transinput) rain [tomorrow](date) in [Wettingen](location)
+    entities:
+    - date: tomorrow
+    - location: Wettingen
+  - slot_was_set:
+    - location: Wettingen
+  - slot_was_set:
+    - date: tomorrow
+  - action: utter_tell_weather
+- story: timer3 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_set_timer  # predicted: ask_addappointment: Wake me up in half an hour
+    entities: []
+  - slot_was_set:
+    - timelength: half an hour
+  - action: utter_set_timer
+- story: translation1 (C:\Users\ruven\Desktop\VA_v1\tests\test_stories.yml)
+  steps:
+  - intent: ask_transinput_language
+    entities:
+    - transinput: I want to take the train
+  - slot_was_set:
+    - transinput: I want to take the train
+  - slot_was_set:
+    - language: spanish
+  - action: utter_translate

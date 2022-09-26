@@ -88,13 +88,7 @@ stories:
     - timelength: 20 minutes
   - action: utter_set_timer
 
-- story: appointment 1
-  steps:
-  - intent: ask_addappointment
-    entities:
-    - date: tomorrow
-    - timelength: '4'
-  - action: utter_addappointment
+
 
 - story: appointment 2
   steps:  
