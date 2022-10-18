@@ -46,80 +46,73 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 
- class Getweather(Action):
+class Getweather(Action):
 
      def name(self) -> Text:
-         return "action_get_weather"
+        return "action_get_weather"
+        
 
      def run(self, dispatcher: CollectingDispatcher,
-             tracker: Tracker,
-             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+                    tracker: Tracker,
+                    domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+       
 
-         def getweather(location, day):
-            if day=='today':
-              d = date.today()
-              print(d)
-              owm1 = OWM('bfafaca964b064d947e7a5f32faef634')
-              owm2= owm1.weather_manager()
+        location = next(tracker.get_latest_entity_values("location"), None)
+        day = next(tracker.get_latest_entity_values("date"), None)
+        dispatcher.utter_message(location)
+        dispatcher.utter_message(day)
+        
 
-              observation = owm2.weather_at_place(location+ ',' + 'CH')
-              w = observation.weather
-              k = w.detailed_status
-              x = w.temperature('celsius')
-              text='Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (location, k, x['temp_max'], x['temp_min'])
+        if day=='today':
+          owm1 = OWM('bfafaca964b064d947e7a5f32faef634')
+          owm2= owm1.weather_manager()
 
-         dispatcher.utter_message(text)
+          observation = owm2.weather_at_place(location + ',' + 'CH')
+          w = observation.weather
+          k = w.detailed_status
+          x = w.temperature('celsius')
+          text='Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (location, k, x['temp_max'], x['temp_min'])
 
-         return []
+        dispatcher.utter_message(text)
+        
+        return []
 
-
-def getweather(location, day):
-  if day=='today':
-    d = date.today()
-    print(d)
-    owm1 = OWM('bfafaca964b064d947e7a5f32faef634')
-    owm2= owm1.weather_manager()
-
-    observation = owm2.weather_at_place(location+ ',' + 'CH')
-    w = observation.weather
-    k = w.detailed_status
-    x = w.temperature('celsius')
-    print('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (location, k, x['temp_max'], x['temp_min']))
-
-  if day == 'tomorrow':
-    d= date.today() + timedelta(days=1)
-    print(d)
-
-
-    owm1 = OWM('bfafaca964b064d947e7a5f32faef634')
-    owm2= owm1.weather_manager()
-
-    observation = owm2.three_hours_forecast(location+ ',' + 'ch', limit=8)#only weather in switzerland
-    w = observation.weather
-    k = w.detailed_status
-    x = w.temperature('celsius')
-    print('The weather tomorrow in %s is %s. The maximum temperature will be %0.2f and the minimum temperature will be %0.2f degree celcius' % (location, k, x['temp_max'], x['temp_min']))
-
-getweather('Genf','today')
-getweather('Genf','tomorrow')
 #------------------------------------------------------------------------------------------------------------
 
 # set timer
-
+# time needs to be given in minutes
 # import the time module
 import time
   
 # define the countdown func.
-def countdown(t):
+class Settimer(Action):
+
+     def name(self) -> Text:
+        return "action_get_timer"
+        
+
+     def run(self, dispatcher: CollectingDispatcher,
+                    tracker: Tracker,
+                    domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+       
+
+        t = next(tracker.get_latest_entity_values("timelength"), None)
+
+        dispatcher.utter_message(timelength)
+
+
+
     
-    while t:
-        mins, secs = divmod(t, 60)
-        timer = '{:02d}:{:02d}'.format(mins, secs)
-        print(timer, end="\r")
-        time.sleep(1)
-        t -= 1
-      
-    print('Fire in the hole!!')
+        while t:
+            mins, secs = divmod(t, 60)
+            timer = '{:02d}:{:02d}'.format(mins, secs)
+            print(timer, end="\r")
+            time.sleep(1)
+            t -= 1
+          
+        dispatcher.utter_message("timer is over")
+
+        return[]
    
 # function call
 #countdown(int(15)) #in seconds
@@ -128,46 +121,149 @@ def countdown(t):
 
 #translator 
 from python_translator import Translator
-def translator(content, language2, language1):
-  translator = Translator()
-  result = translator.translate(content,language2, language1)
 
-  print(result)
+class Translator(Action):
+
+     def name(self) -> Text:
+        return "action_get_translation"
+        
+
+     def run(self, dispatcher: CollectingDispatcher,
+                    tracker: Tracker,
+                    domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+       
+
+        transinput = next(tracker.get_latest_entity_values("transinput"), None)
+        language = next(tracker.get_latest_entity_values("language"), None)
+        dispatcher.utter_message(transinput)
+        dispatcher.utter_message(language)
+
+        translator = Translator()
+        text = translator.translate(transinput, language, "english")
+
+        dispatcher.utter_message(text)
+        return[]
 
 
 #------------------------------------------------------------------------------------------------------------
 
 #dictator
-def dictate(text):
-  with open("C:/Users/ruven/Desktop/dictation.txt", 'w') as f:
-    f.write(text)
+class Dictator(Action):
+
+     def name(self) -> Text:
+        return "action_get_dictation"
+        
+
+     def run(self, dispatcher: CollectingDispatcher,
+                    tracker: Tracker,
+                    domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+       
+
+        dictation = next(tracker.get_latest_entity_values("dictation"), None)
+        dispatcher.utter_message(dictation)
+        
+        with open("C:/Users/ruven/Desktop/dictation.txt", 'w') as f:
+          f.write(dictation)
+
+        dispatcher.utter_message(text="dictation saved")
+        return[]
 
 
 
 
 #-------------------------------------------------------------------------------------
-
+#
 #create appointment
-#password google account school:
-#ruven.peterhans@stud.kswe.ch
-#4rQwAV7fq9nNQXS
+#only full hours like 12 o'clock
 
-
-
-
-# Imagine this function is part of a class which provides the necessary config data
 import win32com.client
 from win32com.client import Dispatch
 outlook = win32com.client.Dispatch("Outlook.Application")
 
 
-def createEvent():
-  appt = outlook.CreateItem(1) # AppointmentItem
-  appt.Start = "2022-9-12 16:10" # yyyy-MM-dd hh:mm
-  appt.Subject = "Fake meeting"
-  appt.Duration = 30 # In minutes (60 Minutes)
-  appt.Location = "The bat cave"
+class Appointmentcreator(Action):
 
-  appt.Save()
-  appt.Send()
+     def name(self) -> Text:
+        return "action_get_appointment"
+        
+
+     def run(self, dispatcher: CollectingDispatcher,
+                    tracker: Tracker,
+                    domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+       
+
+        time = next(tracker.get_latest_entity_values("time"), None)
+        day = next(tracker.get_latest_entity_values("date"), None)
+        title = next(tracker.get_latest_entity_values("title"), None)
+        
+        dispatcher.utter_message(time)
+        dispatcher.utter_message(day)
+        dispatcher.utter_message(title)
+        
+        # '10 o'clock' am to '10:00'
+        t = [int(i) for i in time.split() if i.isdigit()]
+        t= int(t[0])
+        if "pm" in time:
+          t=t+12
+          if t == 24:
+            t=0
+        if t < 10:
+          t = str(t)
+          t = " 0" + t
+        elif t <=10:
+          t=str(t)
+          t = " " + t
+        t=str(t)
+        t = t + ":00"
+
+        # 10th november to 2022-11-10
+        d = [str(i) for i in day if i.isdigit()]
+        if len(d) == 1:
+          d.insert(0, "0")
+        d = ''.join(d)
+
+
+
+
+        if "january" in day:
+          m="01"
+        if "february" in day:
+          m="02"
+        if "march" in day:
+          m="03"
+        if "april" in day:
+          m="04"
+        if "june" in day:
+          m="05"
+        if "july" in day:
+          m="06"
+        if "" in day:
+          m="07"
+        if "august" in day:
+          m="08"
+        if "september" in day:
+          m="09"
+        if "october" in day:
+          m="10"
+        if "november" in day:
+          m="11"
+        if "december" in day:
+          m="12"
+
+        result=str("2022-" + m + "-" + d + t)
+        dispatcher.utter_message(result)
+        
+
+
+        appt = outlook.CreateItem(1) # AppointmentItem
+        appt.Start = result # yyyy-MM-dd hh:mm
+        appt.Subject = "test"
+        appt.Duration = 30 # In minutes (60 Minutes)
+
+        appt.Save()
+        appt.Send()
+
+        dispatcher.utter_message(text="An appointment was created in your calendar ")
+        
+        return[]
 

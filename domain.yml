@@ -74,8 +74,8 @@ forms:
     - date
 
 actions:
-- getweather(location, day)
-- countdown(t)
-- translator(content, language2, language1)
-- dictate(text)
-- createEvent()
+    - action_get_weather
+    - action_get_timer
+    - action_get_dictation
+    - action_get_translation
+    - action_get_appointment

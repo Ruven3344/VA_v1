@@ -8,7 +8,7 @@ stories:
       entities:
       - location: "Baden"
       - date: "tomorrow"
-    - action: utter_tell_weather
+    - action: action_get_weather
 
 - story: weather2
   steps:
@@ -21,7 +21,7 @@ stories:
     - intent: inform_date
       entities:
       - date: "tomorrow"
-    - action: utter_tell_weather
+    - action: action_get_weather
 - story: weather3
   steps:
     - intent: ask_weather
@@ -31,7 +31,7 @@ stories:
     - intent: inform_location
       entities:
       - location: "Baden"
-    - action: utter_tell_weather
+    - action: action_get_weather
 - story: weather4
   steps:
     - intent: ask_weather
@@ -41,27 +41,27 @@ stories:
     - intent: inform_date
       entities:
       - date: "next Monday"
-    - action: utter_tell_weather
+    - action: action_get_weather
 - story: timer1
   steps:
     - intent: ask_set_timer
       entities:
         - timelength: "30 minutes"
-    - action: utter_set_timer
+    - action: action_get_timer
 - story: translation
   steps:
     - intent: ask_transinput_language
       entities:
         - transinput: "How are you"
         - language: "french"
-    - action: utter_translate
+    - action: action_get_translation
 
 - story: dictation
   steps:
     - intent: ask_dictation
       entities:
       - dictation: "Buy bred beer eggs salad"
-    - action: utter_dictation
+    - action: action_get_dictation
 
 - story: appointment
   steps:
@@ -70,7 +70,7 @@ stories:
         - title: "meeting"
         - date: "21th of august"
         - time: "12 o'clock"
-    - action: utter_addappointment
+    - action: action_get_appointment
 
 - story: appointment
   steps:
@@ -78,7 +78,7 @@ stories:
       entities:
         - date: "tomorrow"
         - time: "4 o'clock"
-    - action: utter_addappointment
+    - action: action_get_appointment
 - story: interactive_story_1
   steps:
   - intent: ask_set_timer
@@ -86,7 +86,7 @@ stories:
     - timelength: 20 minutes
   - slot_was_set:
     - timelength: 20 minutes
-  - action: utter_set_timer
+  - action: action_get_timer
 
 
 
@@ -94,8 +94,8 @@ stories:
   steps:  
   - intent: ask_addappointment
     entities:
-    - date: 21th of april
-    - time: 3 o'clock pm
-    - title: meeting
-  - action: utter_addappointment
+    - date: "21th of april"
+    - time: "3 o'clock pm"
+    - title: "meeting"
+  - action: action_get_appointment
 
