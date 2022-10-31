@@ -46,7 +46,7 @@ stories:
   steps:
     - intent: ask_set_timer
       entities:
-        - timelength: "30 minutes"
+        - timelength: "30"
     - action: action_get_timer
 - story: translation
   steps:

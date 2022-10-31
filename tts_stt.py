@@ -1,0 +1,63 @@
+#needs active internet connection (google speech Recognition)
+#https://www.geeksforgeeks.org/python-convert-speech-to-text-and-text-to-speech/
+
+
+# Python program to translate
+# speech to text and text to speech
+ 
+import requests
+import speech_recognition as sr
+import pyttsx3
+ 
+# Initialize the recognizer
+r = sr.Recognizer()
+ 
+# Function to convert text to
+# speech
+def SpeakText(command):
+     
+    # Initialize the engine
+    engine = pyttsx3.init()
+    engine.setProperty("rate", 100)
+    engine.say(command)
+    engine.runAndWait()
+     
+     
+# Loop infinitely for user to
+# speak
+ 
+while(1):   
+     
+    # Exception handling to handle
+    # exceptions at the runtime
+    try:
+         
+        # use the microphone as source for input.
+        with sr.Microphone() as source2:
+             
+            # wait for a second to let the recognizer
+            # adjust the energy threshold based on
+            # the surrounding noise level
+            r.adjust_for_ambient_noise(source2, duration=3.0)
+             
+            #listens for the user's input
+            audio2 = r.listen(source2)
+             
+            # Using google to recognize audio
+            MyText = r.recognize_google(audio2)
+            MyText = MyText.lower()
+            k = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"message": MyText})
+            print("Did you say "+MyText)
+            for i in k.json():
+                global bot_message
+                bot_message = i['text']
+                print(f"{bot_message}")
+
+            SpeakText(bot_message)
+    except sr.RequestError as e:
+        print("Could not request results; {0}".format(e))
+         
+    except sr.UnknownValueError:
+        print("unknown error occured")
+
+SpeakText(command)

@@ -56,13 +56,11 @@ class Getweather(Action):
                     tracker: Tracker,
                     domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
        
-
         location = next(tracker.get_latest_entity_values("location"), None)
         day = next(tracker.get_latest_entity_values("date"), None)
-        dispatcher.utter_message(location)
-        dispatcher.utter_message(day)
+#        dispatcher.utter_message(location)
+#        dispatcher.utter_message(day)
         
-
         if day=='today':
           owm1 = OWM('bfafaca964b064d947e7a5f32faef634')
           owm2= owm1.weather_manager()
@@ -83,7 +81,10 @@ class Getweather(Action):
 # time needs to be given in minutes
 # import the time module
 import time
-  
+import datetime
+
+
+
 # define the countdown func.
 class Settimer(Action):
 
@@ -98,31 +99,47 @@ class Settimer(Action):
 
         t = next(tracker.get_latest_entity_values("timelength"), None)
 
-        dispatcher.utter_message(timelength)
+#        dispatcher.utter_message(t)
 
+        def countdown(h, m, s):
+ 
+          # Calculate the total number of seconds
+          total_seconds = h * 3600 + m * 60 + s
+       
+          # While loop that checks if total_seconds reaches zero
+          # If not zero, decrement total time by one second
+          while total_seconds > 0:
+       
+              # Timer represents time left on countdown
+              timer = datetime.timedelta(seconds = total_seconds)
+              
+              # Prints the time left on the timer
+              print(timer, end="\r")
+       
+              # Delays the program one second
+              time.sleep(1)
+       
+              # Reduces total time by one second
+              total_seconds -= 1
+       
+          print("Bzzzt! The countdown is at zero seconds!")
 
-
-    
-        while t:
-            mins, secs = divmod(t, 60)
-            timer = '{:02d}:{:02d}'.format(mins, secs)
-            print(timer, end="\r")
-            time.sleep(1)
-            t -= 1
+        countdown(0,int(t),0)
+        
           
-        dispatcher.utter_message("timer is over")
+        dispatcher.utter_message("timer is set")
 
         return[]
+        
    
-# function call
-#countdown(int(15)) #in seconds
+
 
 #--------------------------------------------------------------------------------------------------------------
 
 #translator 
 from python_translator import Translator
 
-class Translator(Action):
+class Translation(Action):
 
      def name(self) -> Text:
         return "action_get_translation"
@@ -132,15 +149,19 @@ class Translator(Action):
                     tracker: Tracker,
                     domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
        
-
         transinput = next(tracker.get_latest_entity_values("transinput"), None)
         language = next(tracker.get_latest_entity_values("language"), None)
-        dispatcher.utter_message(transinput)
-        dispatcher.utter_message(language)
-
+#        dispatcher.utter_message(transinput)
+#        dispatcher.utter_message(language)
+ 
         translator = Translator()
-        text = translator.translate(transinput, language, "english")
+        transoutput = translator.translate(transinput, language, "english")
+        transoutput=str(transoutput)
+        spell=str()
+        for i in transoutput:
+          spell+= str(" " + i)
 
+        text=(transinput + " in " + language + " means " + transoutput + ". This is written" + spell )
         dispatcher.utter_message(text)
         return[]
 
@@ -160,7 +181,7 @@ class Dictator(Action):
        
 
         dictation = next(tracker.get_latest_entity_values("dictation"), None)
-        dispatcher.utter_message(dictation)
+#        dispatcher.utter_message(dictation)
         
         with open("C:/Users/ruven/Desktop/dictation.txt", 'w') as f:
           f.write(dictation)
@@ -196,10 +217,6 @@ class Appointmentcreator(Action):
         day = next(tracker.get_latest_entity_values("date"), None)
         title = next(tracker.get_latest_entity_values("title"), None)
         
-        dispatcher.utter_message(time)
-        dispatcher.utter_message(day)
-        dispatcher.utter_message(title)
-        
         # '10 o'clock' am to '10:00'
         t = [int(i) for i in time.split() if i.isdigit()]
         t= int(t[0])
@@ -221,9 +238,6 @@ class Appointmentcreator(Action):
         if len(d) == 1:
           d.insert(0, "0")
         d = ''.join(d)
-
-
-
 
         if "january" in day:
           m="01"
@@ -251,14 +265,12 @@ class Appointmentcreator(Action):
           m="12"
 
         result=str("2022-" + m + "-" + d + t)
-        dispatcher.utter_message(result)
+#        dispatcher.utter_message(result)
         
-
-
         appt = outlook.CreateItem(1) # AppointmentItem
         appt.Start = result # yyyy-MM-dd hh:mm
-        appt.Subject = "test"
-        appt.Duration = 30 # In minutes (60 Minutes)
+        appt.Subject = title
+        appt.Duration = 60 # In minutes
 
         appt.Save()
         appt.Send()

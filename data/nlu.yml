@@ -61,7 +61,7 @@ nlu:
     - set a timer for [20](timelength) minutes
     - Make a [20 minute](timelength) timer
     - Create a [10](timelength) minute timer 
-    - Create a [50](timelength) minutetimer 
+    - Create a [50](timelength) minute timer 
     - create a [25](timelength) minute timer
 
 - intent: ask_transinput_language
