@@ -82,10 +82,14 @@ class Getweather(Action):
 # import the time module
 import time
 import datetime
+import subprocess
+import sys
 
 
 
 # define the countdown func.
+
+
 class Settimer(Action):
 
      def name(self) -> Text:
@@ -98,36 +102,17 @@ class Settimer(Action):
        
 
         t = next(tracker.get_latest_entity_values("timelength"), None)
+        t=[t]
 
-#        dispatcher.utter_message(t)
+        p = subprocess.Popen([sys.executable, 'C:/Users/ruven/Desktop/VA_v1/timer.py'] + t, 
+                                    stdout=subprocess.PIPE, 
+                                    stderr=subprocess.STDOUT)
 
-        def countdown(h, m, s):
- 
-          # Calculate the total number of seconds
-          total_seconds = h * 3600 + m * 60 + s
-       
-          # While loop that checks if total_seconds reaches zero
-          # If not zero, decrement total time by one second
-          while total_seconds > 0:
-       
-              # Timer represents time left on countdown
-              timer = datetime.timedelta(seconds = total_seconds)
-              
-              # Prints the time left on the timer
-              print(timer, end="\r")
-       
-              # Delays the program one second
-              time.sleep(1)
-       
-              # Reduces total time by one second
-              total_seconds -= 1
-       
-          print("Bzzzt! The countdown is at zero seconds!")
 
-        countdown(0,int(t),0)
         
-          
+        
         dispatcher.utter_message("timer is set")
+        print(t)
 
         return[]
         
