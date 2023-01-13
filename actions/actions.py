@@ -31,8 +31,6 @@
 
 #------------------------------------------------------------------------------------------------------
 #weather modules OpenWeather
-#Account: ruven.peterhans@stud.kswe.ch password: Y8jYLzHZYqbE8Th
-# API Key: bfafaca964b064d947e7a5f32faef634
 
 #https://pypi.org/project/pyowm/
 from typing import Any, Text, Dict, List
@@ -62,7 +60,7 @@ class Getweather(Action):
 #        dispatcher.utter_message(day)
         
         if day=='today':
-          owm1 = OWM('bfafaca964b064d947e7a5f32faef634')
+          owm1 = OWM('enter here your openweather api key')
           owm2= owm1.weather_manager()
 
           observation = owm2.weather_at_place(location + ',' + 'CH')
@@ -84,8 +82,27 @@ import time
 import datetime
 import subprocess
 import sys
+import pyttsx3
+import threading
 
+def SpeakText(command):
+     
+    # Initialize the engine
+    engine = pyttsx3.init()
+    engine.setProperty("rate", 100)
+    engine.say(command)
+    engine.runAndWait()
 
+# define the countdown func.
+def countdown(m):
+    
+    while m:
+        mins, secs = divmod(m, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        print(timer, end="\r")
+        time.sleep(1)
+        m -= 1
+    SpeakText("The timer is over")
 
 # define the countdown func.
 
@@ -102,17 +119,15 @@ class Settimer(Action):
        
 
         t = next(tracker.get_latest_entity_values("timelength"), None)
-        t=[t]
+        t=int(t)*60
 
-        p = subprocess.Popen([sys.executable, 'C:/Users/ruven/Desktop/VA_v1/timer.py'] + t, 
-                                    stdout=subprocess.PIPE, 
-                                    stderr=subprocess.STDOUT)
-
-
-        
+        #p = subprocess.Popen([sys.executable, 'C:/Users/ruven/Desktop/VA_v1/timer.py'], 
+         #                           stdout=subprocess.PIPE, 
+          #                          stderr=subprocess.STDOUT)
+        x = threading.Thread(target=countdown, args=(t,))
+        x.start()
         
         dispatcher.utter_message("timer is set")
-        print(t)
 
         return[]
         
@@ -205,25 +220,29 @@ class Appointmentcreator(Action):
         # '10 o'clock' am to '10:00'
         t = [int(i) for i in time.split() if i.isdigit()]
         t= int(t[0])
+        print("t one equals " + str(t))
         if "pm" in time:
           t=t+12
           if t == 24:
             t=0
         if t < 10:
           t = str(t)
-          t = " 0" + t
+          t = "0" + t
         elif t <=10:
           t=str(t)
-          t = " " + t
+          t = t
         t=str(t)
         t = t + ":00"
+        print("time=" +str(t))
 
         # 10th november to 2022-11-10
         d = [str(i) for i in day if i.isdigit()]
         if len(d) == 1:
           d.insert(0, "0")
         d = ''.join(d)
+        print("day"+d)
 
+        print(day)
         if "january" in day:
           m="01"
         if "february" in day:
@@ -232,11 +251,11 @@ class Appointmentcreator(Action):
           m="03"
         if "april" in day:
           m="04"
-        if "june" in day:
+        if "may" in day:
           m="05"
-        if "july" in day:
+        if "june" in day:
           m="06"
-        if "" in day:
+        if "july" in day:
           m="07"
         if "august" in day:
           m="08"
@@ -249,9 +268,11 @@ class Appointmentcreator(Action):
         if "december" in day:
           m="12"
 
-        result=str("2022-" + m + "-" + d + t)
+        result=str("2022-" + m + "-" + d+ " " + t)
 #        dispatcher.utter_message(result)
-        
+        print("the result is" + result)
+        if title==None:
+          title="meeting"
         appt = outlook.CreateItem(1) # AppointmentItem
         appt.Start = result # yyyy-MM-dd hh:mm
         appt.Subject = title

@@ -2,16 +2,16 @@ version: '3.1'
 intents:
 - ask_addappointment
 - ask_dictation
+- ask_set_timer
 - ask_transinput_language
 - ask_weather
 - inform_date
 - inform_location
-- ask_set_timer
 entities:
-- timelength
-- time
 - date
 - title
+- time
+- timelength
 - location
 - transinput
 - language
@@ -32,7 +32,6 @@ responses:
   - text: Dictation saved, you said {dictation}
   utter_addappointment:
   - text: Appointment is added. Date {date} time {time} title {title}
-
 slots:
   location:
     type: text
@@ -72,10 +71,9 @@ forms:
     required_slots:
     - location
     - date
-
 actions:
-    - action_get_weather
-    - action_get_timer
-    - action_get_dictation
-    - action_get_translation
-    - action_get_appointment
+- action_get_appointment
+- action_get_dictation
+- action_get_timer
+- action_get_translation
+- action_get_weather

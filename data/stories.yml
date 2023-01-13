@@ -16,7 +16,7 @@ stories:
     - action: utter_ask_location
     - intent: inform_location
       entities:
-      - location: "Baden"
+      - location: "baden"
     - action: utter_ask_date
     - intent: inform_date
       entities:
@@ -26,21 +26,21 @@ stories:
   steps:
     - intent: ask_weather
       entities:
-        - date: tomorrow
+        - date: "today"
     - action: utter_ask_location
     - intent: inform_location
       entities:
-      - location: "Baden"
+      - location: "Zurich"
     - action: action_get_weather
 - story: weather4
   steps:
     - intent: ask_weather
       entities:
-        - location: Gansingen
+        - location: gansingen
     - action: utter_ask_date
     - intent: inform_date
       entities:
-      - date: "next Monday"
+      - date: "today"
     - action: action_get_weather
 - story: timer1
   steps:
@@ -69,23 +69,23 @@ stories:
       entities:
         - title: "meeting"
         - date: "21th of august"
-        - time: "12 o'clock"
+        - time: "12 pm"
     - action: action_get_appointment
 
 - story: appointment
   steps:
     - intent: ask_addappointment
       entities:
-        - date: "tomorrow"
-        - time: "4 o'clock"
+        - date: "14th december"
+        - time: "4 am"
     - action: action_get_appointment
 - story: interactive_story_1
   steps:
   - intent: ask_set_timer
     entities:
-    - timelength: 20 minutes
+    - timelength: "20" 
   - slot_was_set:
-    - timelength: 20 minutes
+    - timelength: "20"
   - action: action_get_timer
 
 
@@ -95,7 +95,22 @@ stories:
   - intent: ask_addappointment
     entities:
     - date: "21th of april"
-    - time: "3 o'clock pm"
+    - time: "3 pm"
     - title: "meeting"
   - action: action_get_appointment
 
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_addappointment
+    entities:
+    - date: 14th november
+    - time: 2 pm
+    - title: meeting
+  - action: action_get_appointment
+  - intent: ask_addappointment
+    entities:
+    - date: 14th november
+    - time: 2 pm
+    - title: meeting
+  - action: action_get_appointment

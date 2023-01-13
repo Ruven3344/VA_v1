@@ -6,7 +6,7 @@ nlu:
     - How is the weather [tomorrow](date)
     - Tell me the weather [today](date) in [Baden](location)
     - Tell me the weather [today](date) in [Gansingen](location)
-    - Is the weather [today](date) good 
+    - Is the weather [today](date) good
     - Is the weather bad [today](date)
     - Is the weather [next monday](date) good in [Gansingen](location)
     - How is the weather [today](date) in [Wettingen](location)
@@ -17,7 +17,6 @@ nlu:
     - What's the weather forecast for [next Tuesday](date) in [Zürich](location)
     - Will it be foggy [tomorrow](date)
     - Is it going to snow [in the afternoon](date) in [Bern](location)
-
 - intent: inform_location
   examples: |
     - In [Gansingen](location)
@@ -28,31 +27,30 @@ nlu:
     - I would like to know the weather for [Bern](location)
     - I would like to have the weather forecast for [Baden](location)
     - For [Bern](location)
-    - For [Zürich](location)
+    - For [zurich](location)
     - I'm in [Genf](location)
-    - I'm in [Zug](location)
+    - I'm in [zug](location)
     - I'm in [Aarau](location)
     - [Aarau](location)
-    - [Bern](location)
+    - [bern](location)
     - [Genf](location)
- 
 - intent: inform_date
   examples: |
-    - In [Gansingen](location)
-    - In [Baden](location)
+    - In [gansingen](location)
+    - In [baden](location)
     - In [Wil](location)
     - In [Spreitenbach](location)
     - I want to know the weather for [Freiburg](location)
     - I would like to know the weather for [Bern](location)
     - I would like to have the weather forecast for [Baden](location)
     - For [Bern](location)
-    - For [Zürich](location)
-    - I'm in [Genf](location)
-    - I'm in [Zug](location)
+    - For [zürich](location)
+    - I'm in [genf](location)
+    - I'm in [zug](location)
     - I'm in [Aarau](location)
-    - [Aarau](location)
-    - [Bern](location)
-    - [Genf](location)
+    - [aarau](location)
+    - [bern](location)
+    - [genf](location)
 - intent: ask_set_timer
   examples: |
     - Set a timer for [20](timelength) minutes
@@ -60,10 +58,9 @@ nlu:
     - Create a timer for [5](timelength) minutes
     - set a timer for [20](timelength) minutes
     - Make a [20 minute](timelength) timer
-    - Create a [10](timelength) minute timer 
-    - Create a [50](timelength) minute timer 
+    - Create a [10](timelength) minute timer
+    - Create a [50](timelength) minute timer
     - create a [25](timelength) minute timer
-
 - intent: ask_transinput_language
   examples: |
     - Translate [I want to play football](transinput) into [french](language)
@@ -76,30 +73,47 @@ nlu:
     - Translate [I want to play basketball](transinput) into [german](language)
     - Translate [My name is Frank](transinput) into [spanish](language)
     - Traslate into [spanish](language) [My name is Frank](transinput)
-
-
+    - Translate [egg](transinput) into [spanish](language)
+    - Translate [milk](transinput) into [spanish](language)
+    - Translate [running](transinput) into [spanish](language)
 - intent: ask_dictation
   examples: |
-    - Start dictation [I need to go buy beer and breed](dictation)
-    - Start dictation [No one knows anything](dictation)
+    - start dictation [I need to go buy beer and breed](dictation)
+    - start dictation [No one knows anything](dictation)
     - Start dictation [Dear Mr Morrow i would like to request a new credit card greetings Mark](dictation)
-    - Save for me [I want to play football later, thats why i need to do my homework](dictation)
+    - save for me [I want to play football later, thats why i need to do my homework](dictation)
     - Save for me [Psychology, philosophy, math](dictation)
-    - Start dictation [Do homework, wash clothes, pay bills, try out new basketball](dictation)
-    - Write down [safe description for settings](dictation)
-    - Write down for me [eggs, onions, garlic, pencils](dictation)
-    - I want to remember [apples, bananas and tomatoes](dictation)
-    - I want to remember [tennis, soccer and swimming](dictation)
-    
+    - start dictation [Do homework, wash clothes, pay bills, try out new basketball](dictation)
+    - write down [safe description for settings](dictation)
+    - write down for me [eggs, onions, garlic, pencils](dictation)
+    - i want to remember [apples, bananas and tomatoes](dictation)
+    - i want to remember [tennis, soccer and swimming](dictation)
 - intent: ask_addappointment
-  examples: |
-    - Add an appointment [tomorrow](date) at [12 o'clock](time) with the title [meeting with Ben](title)
-    - Add an appointment at the [21th of august](date) at [4 o'clock](time) #add default name appointment
-    - Create appointment [next monday](date) at [2 o'clock pm](time) with the title [buy pencils)](title)
-    - Create appointment with the title [buy pencils](title) [21th of april](date) at [7 o'clock pm](time)
-    - Create an appointment with the title [bought pencils](title) [11th of march](date) at [2 o'clock pm](time)
-    - Add an appointment at the [21th of april](date) at [9 o'clock pm](time) with the title [groceries](title)
-    - Add appointment at the [21th of april](date) at [3 o'clock pm](time) with the title [get child](title)
-    - Insert an appointment at the [23th of december](date) with the title [meeting](title)
-    - Insert appointment at the [21th of april](date) at [3 o'clock pm](time) with the title [meeting](title)
-    - Insert appointment during the [2nd april](date) at [4 o'clock am](time)
+  examples:
+  - text: |
+      Add an appointment [tomorrow](date) at [12 am](time) with the title [meeting with Ben](title)
+  - text: |
+      Add an appointment at the [21th of august](date) at [4 am](time) #add default name appointment
+  - text: |
+      Create appointment [next monday](date) at [2 pm](time) with the title [buy pencils)](title)
+  - text: |
+      Create appointment with the title [buy pencils](title) [21th of april](date) at [7 pm](time)
+  - text: |
+      Create an appointment with the title [bought pencils](title) [11th of march](date) at [2 pm](time)
+  - text: |
+      Add an appointment at the [21th of april](date) at [9 pm](time) with the title [groceries](title)
+  - text: |
+      Add appointment at the [21th of april](date) at [3 pm](time) with the title [get child](title)
+  - text: |
+      Insert an appointment at the [23th of december](date) with the title [meeting](title)
+  - text: |
+      Insert appointment at the [21th of april](date) at [3 pm](time) with the title [meeting](title)
+  - text: |
+      Insert appointment during the [2nd april](date) at [4 am](time)
+  - text: |
+      create an appointment on the [14th november](date) at [2 pm](time) with the
+       title [meeting](title)
+  - text: |
+      create an appointment on the [14th november](date) at [2 pm](time) with the
+
+       title [meeting](title)
